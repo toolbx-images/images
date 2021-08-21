@@ -19,6 +19,6 @@ RUN rm /extra-packages
 RUN pacman -Scc --noconfirm
 
 # Enable sudo permission for wheel users
-RUN sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
 
 CMD /bin/sh
