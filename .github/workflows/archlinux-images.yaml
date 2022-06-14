@@ -1,0 +1,37 @@
+name: Arch Linux images
+
+on:
+  push:
+    branches: [ "morten/archlinux" ] # TODO: switch to main
+    paths:
+      - archlinux/**
+      - .github/workflows/archlinux-images.yaml
+  schedule:
+    - cron:  '0 0 7/14 * *'
+
+jobs:
+  build-and-push-images:
+    name: Build and push images
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Quay.io
+        uses: docker/login-action@v2
+        with:
+          registry: quay.io
+          username: 'foxboron+archlinux'  # TODO: credentials
+          password: ${{ secrets.QUAY_TEST_ROBOT_TOKEN }}
+
+      - name: Push latest tag
+        uses: docker/build-push-action@v3
+        with:
+          context: archlinux
+          file: archlinux/Containerfile
+          push: true
+          tags: quay.io/foxboron/archlinux-toolbox:latest
