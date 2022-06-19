@@ -6,7 +6,7 @@ LABEL com.github.containers.toolbox="true" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Arch Linux toolbox containers" \
-      maintainer="Erazem Kokot <mail@erazem.eu>"
+      maintainer="Morten Linderud <foxboron@archlinux.org>"
 
 COPY README.md /
 
