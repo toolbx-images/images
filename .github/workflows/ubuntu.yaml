@@ -9,6 +9,9 @@ on:
   schedule:
     - cron:  '0 0 7/14 * *'
 
+# Prevent multiple workflow runs from racing
+concurrency: ${{ github.workflow }}
+
 env:
   latest_ubuntu_release: '22.04'
 
