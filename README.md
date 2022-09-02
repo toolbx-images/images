@@ -6,6 +6,8 @@ Container images to use with [toolbx](https://containertoolbx.org/)
 ## Available distributions
 
 - Fedora: See the official images (default in toolbx)
+- CentOS (Stream):
+  - c9s: `stream9`
 - Ubuntu:
   - `22.04`
 
