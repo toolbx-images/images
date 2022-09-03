@@ -7,6 +7,12 @@ Container images to use with [toolbx](https://containertoolbx.org/)
 
 - Fedora: See the official images (default in toolbx)
 
+- Arch Linux:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/archlinux-toolbox:latest
+  $ toolbox enter archlinux-toolbox-latest
+  ```
+
 - CentOS (Stream):
   - c9s: `stream9`
   ```
