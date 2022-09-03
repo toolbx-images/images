@@ -7,7 +7,7 @@ LABEL com.github.containers.toolbox="true" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Fedora toolbox containers" \
-      maintainer="Debarshi Ray <rishi@fedoraproject.org>"
+      maintainer="Timothée Ravier <tim@siosm.fr>"
 
 RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
 RUN dnf -y swap coreutils-single coreutils-full
