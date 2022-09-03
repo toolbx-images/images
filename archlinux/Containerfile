@@ -8,8 +8,6 @@ LABEL com.github.containers.toolbox="true" \
       summary="Base image for creating Arch Linux toolbox containers" \
       maintainer="Morten Linderud <foxboron@archlinux.org>"
 
-COPY README.md /
-
 # Install extra packages
 COPY extra-packages /
 RUN pacman -Syu --needed --noconfirm - < extra-packages
