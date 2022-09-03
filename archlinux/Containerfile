@@ -18,5 +18,3 @@ RUN pacman -Scc --noconfirm
 
 # Enable sudo permission for wheel users
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
-
-CMD /bin/sh
