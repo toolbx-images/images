@@ -1,0 +1,23 @@
+FROM registry.access.redhat.com/ubi9/ubi
+
+ENV NAME=rhel-toolbox VERSION=9.0
+LABEL com.github.containers.toolbox="true" \
+      com.redhat.component="$NAME" \
+      name="$NAME" \
+      version="$VERSION" \
+      usage="This image is meant to be used with the toolbox command" \
+      summary="Base image for creating RHEL 9 toolbox containers" \
+      maintainer="Timothée Ravier <tim@siosm.fr>"
+
+RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
+RUN dnf -y swap coreutils-single coreutils-full
+
+COPY missing-docs /
+RUN dnf -y reinstall $(<missing-docs)
+RUN rm /missing-docs
+
+COPY extra-packages /
+RUN dnf -y install $(<extra-packages)
+RUN rm /extra-packages
+
+RUN dnf clean all

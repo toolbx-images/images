@@ -33,6 +33,26 @@ Container images to use with [toolbx] ([GitHub]).
   $ toolbox enter debian-toolbox-10
   ```
 
+[Red Hat Enterprise Linux (Universal Base Image)]. Note: You are free to use
+and redistribute UBI images, provided you adhere to the [Red Hat Universal Base
+Image End User Licensing Agreement][UBI].
+  ```
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
+  $ toolbox enter rhel-toolbox-9.0
+
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.6
+  $ toolbox enter rhel-toolbox-8.6
+
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.4
+  $ toolbox enter rhel-toolbox-8.4
+
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.2
+  $ toolbox enter rhel-toolbox-8.2
+
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:7
+  $ toolbox enter rhel-toolbox-7
+  ```
+
 - [Ubuntu]:
   ```
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
@@ -50,4 +70,6 @@ submitting a PR.
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
 [Debian]: https://hub.docker.com/_/debian
+[Red Hat Enterprise Linux (Universal Base Image)]: https://developers.redhat.com/products/rhel/ubi
+[UBI]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
 [Ubuntu]: https://hub.docker.com/_/ubuntu
