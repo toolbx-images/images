@@ -1,11 +1,11 @@
-name: Arch Linux images
+name: Build Arch Linux toolbx image
 
 on:
   push:
-    branches: [ "morten/archlinux" ] # TODO: switch to main
+    branches: [ "main" ]
     paths:
       - archlinux/**
-      - .github/workflows/archlinux-images.yaml
+      - .github/workflows/archlinux.yaml
   schedule:
     - cron:  '0 0 7/14 * *'
 
@@ -25,13 +25,14 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: quay.io
-          username: 'foxboron+archlinux'  # TODO: credentials
-          password: ${{ secrets.QUAY_TEST_ROBOT_TOKEN }}
+          username: 'toolbx-images+github'
+          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
-      - name: Push latest tag
+      - name: Build and push Arch Linux toolbx image
         uses: docker/build-push-action@v3
         with:
           context: archlinux
           file: archlinux/Containerfile
+          platforms: linux/amd64
           push: true
-          tags: quay.io/foxboron/archlinux-toolbox:latest
+          tags: quay.io/toolbx-images/archlinux-toolbox:latest
