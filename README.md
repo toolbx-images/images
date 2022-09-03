@@ -20,3 +20,9 @@ Container images to use with [toolbx](https://containertoolbx.org/)
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
   $ toolbox enter ubuntu-toolbox-22.04
   ```
+
+## Hacking on images
+
+As we have limited free GitHub Actions minutes, we do not trigger builds on
+PRs, only on merged commits. Please test you image builds locally before
+submitting a PR.
