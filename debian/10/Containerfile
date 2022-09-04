@@ -1,29 +1,35 @@
-FROM debian:10
+FROM docker.io/library/debian:10
 
 ENV NAME=debian-toolbox VERSION=10
 LABEL com.github.containers.toolbox="true" \
-      com.github.debarshiray.toolbox="true" \
-      com.redhat.component="$NAME" \
       name="$NAME" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
-      summary="Base image for creating Fedora toolbox containers" \
-      maintainer="Debarshi Ray <rishi@fedoraproject.org>"
+      summary="Base image for creating Debian toolbox containers" \
+      maintainer=""
 
-COPY README.md /
+# Remove apt configuration optimized for containers
+# Remove docker-gzip-indexes to help with "command-not-found"
+RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-languages
 
-WORKDIR /
+# Enable myhostname nss plugin for clean hostname resolution without patching
+# hosts (at least for sudo), add it right after 'files' entry. We expect that
+# this entry is not present yet. Do this early so that package postinst (which
+# adds it too late in the order) skips this step
+RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.conf
 
-RUN apt -y update
-
-COPY missing-docs /
-RUN apt -y reinstall $(cat missing-docs)
-RUN rm /missing-docs
-
+# Install extra packages as well as libnss-myhostname
 COPY extra-packages /
-RUN apt -y install $(cat extra-packages)
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install \
+        libnss-myhostname \
+        $(cat extra-packages | xargs) && \
+    rm -rd /var/lib/apt/lists/*
 RUN rm /extra-packages
 
-RUN apt clean all
+# Enable password less sudo
+RUN sed -i -e 's/ ALL$/ NOPASSWD:ALL/' /etc/sudoers
 
-COPY exempt_group /etc/sudoers.d/
+RUN echo VARIANT_ID=container >> /etc/os-release
+# ?
+RUN touch /etc/localtime
