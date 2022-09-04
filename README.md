@@ -18,6 +18,21 @@ Container images to use with [toolbx] ([GitHub]).
   $ toolbox enter centos-toolbox-stream9
   ```
 
+- [Debian]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:unstable
+  $ toolbox enter debian-toolbox-unstable
+
+  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:testing
+  $ toolbox enter debian-toolbox-testing
+
+  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:11
+  $ toolbox enter debian-toolbox-11
+
+  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:10
+  $ toolbox enter debian-toolbox-10
+  ```
+
 - [Ubuntu]:
   ```
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
@@ -34,4 +49,5 @@ submitting a PR.
 [GitHub]: https://github.com/containers/toolbox
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
+[Debian]: https://hub.docker.com/_/debian
 [Ubuntu]: https://hub.docker.com/_/ubuntu
