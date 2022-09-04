@@ -27,5 +27,3 @@ RUN rm /extra-packages
 RUN apt clean all
 
 COPY exempt_group /etc/sudoers.d/
-
-CMD /bin/sh
