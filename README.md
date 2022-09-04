@@ -48,9 +48,6 @@ Container images to use with [toolbx] ([GitHub]).
 
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.2
   $ toolbox enter rhel-toolbox-8.2
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:7
-  $ toolbox enter rhel-toolbox-7
   ```
 
 - [Ubuntu]:

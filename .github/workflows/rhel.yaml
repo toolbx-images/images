@@ -17,7 +17,7 @@ jobs:
   build-and-push-images:
     strategy:
       matrix:
-        rhel_release: ['7', '8.2', '8.4', '8.6', '9.0']
+        rhel_release: ['8.2', '8.4', '8.6', '9.0']
 
     runs-on: ubuntu-latest
     steps:
