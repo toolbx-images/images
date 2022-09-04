@@ -54,6 +54,15 @@ Container images to use with [toolbx] ([GitHub]).
   ```
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
   $ toolbox enter ubuntu-toolbox-22.04
+
+  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:20.04
+  $ toolbox enter ubuntu-toolbox-20.04
+
+  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:18.04
+  $ toolbox enter ubuntu-toolbox-18.04
+
+  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:16.04
+  $ toolbox enter ubuntu-toolbox-16.04
   ```
 
 ## Hacking on images
