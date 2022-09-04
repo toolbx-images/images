@@ -1,4 +1,4 @@
-name: Build all Ubuntu toolbx images
+name: Build Ubuntu toolbx images
 
 on:
   push:
