@@ -7,7 +7,7 @@ on:
       - centos/**
       - .github/workflows/centos.yaml
   schedule:
-    - cron:  '0 0 7/14 * *'
+    - cron:  '0 0 * * MON'
 
 # Prevent multiple workflow runs from racing
 concurrency: ${{ github.workflow }}
