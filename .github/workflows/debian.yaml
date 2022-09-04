@@ -39,7 +39,7 @@ jobs:
           username: 'toolbx-images+github'
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
-      - name: Build and push debian ${{ matrix.debian_release }} toolbox image
+      - name: Build and push Debian ${{ matrix.debian_release }} toolbox image
         uses: docker/build-push-action@v3
         with:
           context: debian/${{ matrix.debian_release }}
