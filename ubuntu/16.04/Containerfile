@@ -8,16 +8,17 @@ LABEL com.github.containers.toolbox="true" \
       summary="Base image for creating Ubuntu toolbox containers" \
       maintainer="Ievgen Popovych <jmennius@gmail.com>"
 
-# remove some container-optimized apt configuration;
-# removing docker-gzip-indexes specifically helps with command-not-found
+# Remove apt configuration optimized for containers
+# Remove docker-gzip-indexes to help with "command-not-found"
 RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-languages
 
-# Enable myhostname nss plugin for clean hostname resolution w/o patching hosts (at least for sudo),
-# add it right after 'files' entry; we expect that entry is not present yet;
-# do this early so that package postinst (which adds it too late in the order) skips this step
+# Enable myhostname nss plugin for clean hostname resolution without patching
+# hosts (at least for sudo), add it right after 'files' entry. We expect that
+# this entry is not present yet. Do this early so that package postinst (which
+# adds it too late in the order) skips this step
 RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.conf
 
-# Install ubuntu-minimal & ubuntu-standard (recommendations are welcome)
+# Install ubuntu-minimal & ubuntu-standard
 # Ask resolvconf maintainer script not to touch resolve.conf file
 # Install extra packages as well as libnss-myhostname
 COPY extra-packages /
