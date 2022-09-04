@@ -33,7 +33,6 @@ tree
 unzip
 util-linux
 wget
-which
 xauth
 xz-utils
 zip
