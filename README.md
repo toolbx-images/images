@@ -33,9 +33,9 @@ Container images to use with [toolbx] ([GitHub]).
   $ toolbox enter debian-toolbox-10
   ```
 
-[Red Hat Enterprise Linux (Universal Base Image)]. Note: You are free to use
-and redistribute UBI images, provided you adhere to the [Red Hat Universal Base
-Image End User Licensing Agreement][UBI].
+- [Red Hat Enterprise Linux (Universal Base Image)]. Note: You are free to use
+  and redistribute UBI images, provided you adhere to the [Red Hat Universal
+  Base Image End User Licensing Agreement][UBI].
   ```
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
   $ toolbox enter rhel-toolbox-9.0
