@@ -18,15 +18,13 @@ RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-lan
 # adds it too late in the order) skips this step
 RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.conf
 
-# Restore documentation but do not upgrade all packages
-# Install ubuntu-minimal & ubuntu-standard
+# FIXME: Restore documentation but do not upgrade all packages
 # Install extra packages as well as libnss-myhostname
+# FIXME: Install ubuntu-minimal & ubuntu-standard
 COPY extra-packages /
 RUN sed -Ei '/apt-get (update|upgrade)/s/^/#/' /usr/local/sbin/unminimize && \
     apt-get update && \
-    yes | /usr/local/sbin/unminimize && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
-        ubuntu-minimal ubuntu-standard \
         libnss-myhostname \
         $(cat extra-packages | xargs) && \
     rm -rd /var/lib/apt/lists/*
