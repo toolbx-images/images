@@ -44,14 +44,14 @@ jobs:
           file: rhel/${{ matrix.rhel_release }}/Containerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: quay.io/toolbx/rhel-toolbox:${{ matrix.rhel_release }}
+          tags: quay.io/toolbx-images/rhel-toolbox:${{ matrix.rhel_release }}
 
       - name: Push latest tag
-        if: env.latest_release == matrix.rhel_release
+        if: env.latest_rhel_release == matrix.rhel_release
         uses: docker/build-push-action@v3
         with:
-          context: rhel
+          context: rhel/${{ matrix.rhel_release }}
           file: rhel/${{ matrix.rhel_release }}/Containerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: quay.io/toolbx/rhel-toolbox:latest
+          tags: quay.io/toolbx-images/rhel-toolbox:latest
