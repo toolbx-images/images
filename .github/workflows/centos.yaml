@@ -1,4 +1,4 @@
-name: Build CentOS Stream toolbx image
+name: Build CentOS Stream toolbx images
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
   build-and-push-images:
     strategy:
       matrix:
-        centos_release: ['stream9']
+        centos_release: ['stream8', 'stream9']
 
     runs-on: ubuntu-latest
     steps:

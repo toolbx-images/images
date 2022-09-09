@@ -16,6 +16,9 @@ Container images to use with [toolbx] ([GitHub]).
   ```
   $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
   $ toolbox enter centos-toolbox-stream9
+
+  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream8
+  $ toolbox enter centos-toolbox-stream8
   ```
 
 - [Debian]:
