@@ -68,12 +68,6 @@ Container images to use with [toolbx] ([GitHub]).
   $ toolbox enter ubuntu-toolbox-16.04
   ```
 
-## Hacking on images
-
-As we have limited free GitHub Actions minutes, we do not trigger builds on
-PRs, only on merged commits. Please test you image builds locally before
-submitting a PR.
-
 [toolbx]: https://containertoolbx.org
 [GitHub]: https://github.com/containers/toolbox
 [Arch Linux]: https://hub.docker.com/_/archlinux/
