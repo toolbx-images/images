@@ -14,6 +14,7 @@ RUN sed -i '/tsflags=nodocs/d' /etc/yum.conf
 COPY missing-docs extra-packages /
 
 RUN yum -y reinstall $(<missing-docs) && \
+    yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum -y install $(<extra-packages) && \
     yum -y upgrade && \
     yum clean all

@@ -15,6 +15,7 @@ COPY missing-docs extra-packages /
 
 RUN dnf -y swap coreutils-single coreutils-full && \
     dnf -y reinstall $(<missing-docs) && \
+    dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install $(<extra-packages) && \
     dnf -y upgrade && \
     dnf clean all
