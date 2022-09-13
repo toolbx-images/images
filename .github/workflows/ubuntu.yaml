@@ -1,8 +1,17 @@
 name: Build Ubuntu toolbx images
 
+permissions: read-all
+
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+    paths:
+      - ubuntu/**
+      - .github/workflows/ubuntu.yaml
+  pull_request:
+    branches:
+      - main
     paths:
       - ubuntu/**
       - .github/workflows/ubuntu.yaml
@@ -13,13 +22,15 @@ on:
 concurrency: ${{ github.workflow }}
 
 env:
-  latest_ubuntu_release: '22.04'
+  distro: 'ubuntu'
+  distro_pretty: 'Ubuntu'
+  latest_release: '22.04'
 
 jobs:
   build-and-push-images:
     strategy:
       matrix:
-        ubuntu_release: ['16.04', '18.04', '20.04', '22.04']
+        release: ['16.04', '18.04', '20.04', '22.04']
 
     runs-on: ubuntu-latest
     steps:
@@ -34,26 +45,38 @@ jobs:
 
       - name: Login to Quay.io
         uses: docker/login-action@v2
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main'
         with:
           registry: quay.io
           username: 'toolbx-images+github'
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
-      - name: Build and push Ubuntu ${{ matrix.ubuntu_release }} toolbox image
+      - name: Build ${{ env.distro_pretty }} ${{ matrix.release }} toolbox image
         uses: docker/build-push-action@v3
+        if: github.event_name == 'pull_request'
         with:
-          context: ubuntu/${{ matrix.ubuntu_release }}
-          file: ubuntu/${{ matrix.ubuntu_release }}/Containerfile
+          context: ${{ env.distro }}/${{ matrix.release }}
+          file: ${{ env.distro }}/${{ matrix.release }}/Containerfile
+          platforms: linux/amd64,linux/arm64
+          push: false
+          tags: quay.io/toolbx-images/${{ env.distro }}-toolbox:${{ matrix.release }}
+
+      - name: Build and push ${{ env.distro_pretty }} ${{ matrix.release }} toolbox image
+        uses: docker/build-push-action@v3
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main'
+        with:
+          context: ${{ env.distro }}/${{ matrix.release }}
+          file: ${{ env.distro }}/${{ matrix.release }}/Containerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: quay.io/toolbx-images/ubuntu-toolbox:${{ matrix.ubuntu_release }}
+          tags: quay.io/toolbx-images/${{ env.distro }}-toolbox:${{ matrix.release }}
 
       - name: Push latest tag
-        if: env.latest_ubuntu_release == matrix.ubuntu_release
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main' && env.latest_release == matrix.release
         uses: docker/build-push-action@v3
         with:
-          context: ubuntu/${{ matrix.ubuntu_release }}
-          file: ubuntu/${{ matrix.ubuntu_release }}/Containerfile
+          context: ${{ env.distro }}/${{ matrix.release }}
+          file: ${{ env.distro }}/${{ matrix.release }}/Containerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: quay.io/toolbx-images/ubuntu-toolbox:latest
+          tags: quay.io/toolbx-images/${{ env.distro }}-toolbox:latest
