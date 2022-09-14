@@ -1,15 +1,9 @@
-name: Build Ubuntu toolbx images
+name: "Ubuntu: Build and push toolbx images"
 
 permissions: read-all
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - ubuntu/**
-      - .github/workflows/ubuntu.yaml
-  pull_request:
     branches:
       - main
     paths:
@@ -45,25 +39,13 @@ jobs:
 
       - name: Login to Quay.io
         uses: docker/login-action@v2
-        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main'
         with:
           registry: quay.io
           username: 'toolbx-images+github'
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
-      - name: Build ${{ env.distro_pretty }} ${{ matrix.release }} toolbox image
-        uses: docker/build-push-action@v3
-        if: github.event_name == 'pull_request'
-        with:
-          context: ${{ env.distro }}/${{ matrix.release }}
-          file: ${{ env.distro }}/${{ matrix.release }}/Containerfile
-          platforms: linux/amd64,linux/arm64
-          push: false
-          tags: quay.io/toolbx-images/${{ env.distro }}-toolbox:${{ matrix.release }}
-
       - name: Build and push ${{ env.distro_pretty }} ${{ matrix.release }} toolbox image
         uses: docker/build-push-action@v3
-        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main'
         with:
           context: ${{ env.distro }}/${{ matrix.release }}
           file: ${{ env.distro }}/${{ matrix.release }}/Containerfile
@@ -72,7 +54,7 @@ jobs:
           tags: quay.io/toolbx-images/${{ env.distro }}-toolbox:${{ matrix.release }}
 
       - name: Push latest tag
-        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref_name == 'refs/heads/main' && env.latest_release == matrix.release
+        if: env.latest_release == matrix.release
         uses: docker/build-push-action@v3
         with:
           context: ${{ env.distro }}/${{ matrix.release }}
