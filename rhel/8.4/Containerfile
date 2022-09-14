@@ -6,18 +6,17 @@ LABEL com.github.containers.toolbox="true" \
       name="$NAME" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
-      summary="Base image for creating RHEL 8.4 toolbox containers" \
+      summary="Base image for creating RHEL toolbox containers" \
       maintainer="Timothée Ravier <tim@siosm.fr>"
 
 RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
-RUN dnf -y swap coreutils-single coreutils-full
 
-COPY missing-docs /
-RUN dnf -y reinstall $(<missing-docs)
-RUN rm /missing-docs
+COPY missing-docs extra-packages /
 
-COPY extra-packages /
-RUN dnf -y install $(<extra-packages)
-RUN rm /extra-packages
+RUN dnf -y swap coreutils-single coreutils-full && \
+    dnf -y reinstall $(<missing-docs) && \
+    dnf -y install $(<extra-packages) && \
+    dnf -y upgrade && \
+    dnf clean all
 
-RUN dnf clean all
+RUN rm /missing-docs /extra-packages
