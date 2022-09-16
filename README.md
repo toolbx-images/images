@@ -4,6 +4,9 @@ Container images to use with [toolbx] ([GitHub]).
 
 ## Available distributions and usage
 
+You can find all images in the [toolbx-images organization] on [Quay.io], or
+directly use the commands below:
+
 - Fedora: See the official images (default in toolbx)
 
 - [Arch Linux]:
@@ -70,6 +73,8 @@ Container images to use with [toolbx] ([GitHub]).
 
 [toolbx]: https://containertoolbx.org
 [GitHub]: https://github.com/containers/toolbox
+[toolbx-images organization]: https://quay.io/organization/toolbx-images
+[Quay.io]: https://quay.io/
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
 [Debian]: https://hub.docker.com/_/debian
