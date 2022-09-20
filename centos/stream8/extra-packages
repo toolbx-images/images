@@ -7,7 +7,6 @@ findutils
 flatpak-spawn
 git
 gnupg
-gnupg2-smime
 gvfs-client
 hostname
 iproute
