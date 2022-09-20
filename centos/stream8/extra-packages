@@ -19,6 +19,8 @@ lsof
 man-db
 man-pages
 mtr
+nano
+nss-mdns
 openssh-clients
 passwd
 pigz
