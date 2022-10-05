@@ -1,6 +1,6 @@
 # Container images for toolbx
 
-Container images to use with [toolbx] ([GitHub]).
+Community maintained container images to use with [toolbx] ([GitHub]).
 
 ## Available distributions and usage
 
