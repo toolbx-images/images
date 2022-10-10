@@ -1,6 +1,8 @@
 # Container images for toolbx
 
-Community maintained container images to use with [toolbx] ([GitHub]).
+Community maintained container images to use with [toolbx] ([GitHub]). See
+[containers/toolbox#1019] for the upstream discussion on the next steps to make
+those images more "official".
 
 ## Available distributions and usage
 
@@ -73,6 +75,7 @@ directly use the commands below:
 
 [toolbx]: https://containertoolbx.org
 [GitHub]: https://github.com/containers/toolbox
+[containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
 [toolbx-images organization]: https://quay.io/organization/toolbx-images
 [Quay.io]: https://quay.io/
 [Arch Linux]: https://hub.docker.com/_/archlinux/
