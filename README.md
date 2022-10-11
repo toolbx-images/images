@@ -11,6 +11,15 @@ directly use the commands below:
 
 - Fedora: See the official images (default in toolbx)
 
+- [AlmaLinux] with [EPEL] enabled by default:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:9
+  $ toolbox enter almalinux-toolbox-9
+
+  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:8
+  $ toolbox enter almalinux-toolbox-8
+  ```
+
 - [Alpine Linux]:
   ```
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.16
@@ -99,6 +108,7 @@ directly use the commands below:
 [containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
 [toolbx-images organization]: https://quay.io/organization/toolbx-images
 [Quay.io]: https://quay.io/
+[AlmaLinux]: https://hub.docker.com/_/almalinux
 [Alpine Linux]: https://hub.docker.com/_/alpine
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
