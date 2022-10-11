@@ -41,6 +41,12 @@ directly use the commands below:
   $ toolbox enter debian-toolbox-10
   ```
 
+- [openSUSE]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed
+  $ toolbox enter opensuse-toolbox-tumbleweed
+  ```
+
 - [Red Hat Enterprise Linux (Universal Base Image)]. Note: You are free to use
   and redistribute UBI images, provided you adhere to the [Red Hat Universal
   Base Image End User Licensing Agreement][UBI].
@@ -84,3 +90,4 @@ directly use the commands below:
 [Red Hat Enterprise Linux (Universal Base Image)]: https://developers.redhat.com/products/rhel/ubi
 [UBI]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
 [Ubuntu]: https://hub.docker.com/_/ubuntu
+[openSUSE]: https://registry.opensuse.org/cgi-bin/cooverview?srch_term=project%3D%5EopenSUSE%3AContainers%3A+container%3Dtoolbox
