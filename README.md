@@ -64,6 +64,15 @@ directly use the commands below:
   $ toolbox enter rhel-toolbox-8.2
   ```
 
+- [Rocky Linux]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
+  $ toolbox enter rockylinux-toolbox-9
+
+  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:8
+  $ toolbox enter rockylinux-toolbox-8
+  ```
+
 - [Ubuntu]:
   ```
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
@@ -89,5 +98,6 @@ directly use the commands below:
 [Debian]: https://hub.docker.com/_/debian
 [Red Hat Enterprise Linux (Universal Base Image)]: https://developers.redhat.com/products/rhel/ubi
 [UBI]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
+[Rocky Linux]: https://hub.docker.com/_/rockylinux
 [Ubuntu]: https://hub.docker.com/_/ubuntu
 [openSUSE]: https://registry.opensuse.org/cgi-bin/cooverview?srch_term=project%3D%5EopenSUSE%3AContainers%3A+container%3Dtoolbox
