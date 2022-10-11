@@ -17,7 +17,7 @@ directly use the commands below:
   $ toolbox enter archlinux-toolbox-latest
   ```
 
-- [CentOS (Stream)]:
+- [CentOS (Stream)] with [EPEL] enabled by default:
   ```
   $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
   $ toolbox enter centos-toolbox-stream9
@@ -47,9 +47,9 @@ directly use the commands below:
   $ toolbox enter opensuse-toolbox-tumbleweed
   ```
 
-- [Red Hat Enterprise Linux (Universal Base Image)]. Note: You are free to use
-  and redistribute UBI images, provided you adhere to the [Red Hat Universal
-  Base Image End User Licensing Agreement][UBI].
+- [Red Hat Enterprise Linux (Universal Base Image)] with [EPEL] enabled by
+  default. Note: You are free to use and redistribute UBI images, provided you
+  adhere to the [Red Hat Universal Base Image End User Licensing Agreement].
   ```
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
   $ toolbox enter rhel-toolbox-9.0
@@ -64,7 +64,7 @@ directly use the commands below:
   $ toolbox enter rhel-toolbox-8.2
   ```
 
-- [Rocky Linux]:
+- [Rocky Linux] with [EPEL] enabled by default:
   ```
   $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
   $ toolbox enter rockylinux-toolbox-9
@@ -95,9 +95,10 @@ directly use the commands below:
 [Quay.io]: https://quay.io/
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
+[EPEL]: https://docs.fedoraproject.org/en-US/epel/
 [Debian]: https://hub.docker.com/_/debian
 [Red Hat Enterprise Linux (Universal Base Image)]: https://developers.redhat.com/products/rhel/ubi
-[UBI]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
+[Red Hat Universal Base Image End User Licensing Agreement]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
 [Rocky Linux]: https://hub.docker.com/_/rockylinux
 [Ubuntu]: https://hub.docker.com/_/ubuntu
 [openSUSE]: https://registry.opensuse.org/cgi-bin/cooverview?srch_term=project%3D%5EopenSUSE%3AContainers%3A+container%3Dtoolbox
