@@ -11,6 +11,12 @@ directly use the commands below:
 
 - Fedora: See the official images (default in toolbx)
 
+- [Alpine Linux]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.16
+  $ toolbox enter alpine-toolbox-3.16
+  ```
+
 - [Arch Linux]:
   ```
   $ toolbox create --image quay.io/toolbx-images/archlinux-toolbox:latest
@@ -93,6 +99,7 @@ directly use the commands below:
 [containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
 [toolbx-images organization]: https://quay.io/organization/toolbx-images
 [Quay.io]: https://quay.io/
+[Alpine Linux]: https://hub.docker.com/_/alpine
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
 [EPEL]: https://docs.fedoraproject.org/en-US/epel/

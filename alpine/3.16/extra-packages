@@ -1,0 +1,13 @@
+curl
+git
+gnupg
+keyutils
+man-db
+man-pages
+openssh-client
+sudo
+tar
+tree
+unzip
+xz
+zip
