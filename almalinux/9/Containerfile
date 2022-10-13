@@ -1,0 +1,23 @@
+FROM docker.io/library/almalinux:9
+
+ENV NAME=almalinux-toolbox VERSION=9
+LABEL com.github.containers.toolbox="true" \
+      com.redhat.component="$NAME" \
+      name="$NAME" \
+      version="$VERSION" \
+      usage="This image is meant to be used with the toolbox command" \
+      summary="Base image for creating AlmaLinux toolbox containers" \
+      maintainer="Ricardo Arguello <ricado.arguello@gmail.com>"
+
+COPY missing-docs extra-packages /
+
+RUN dnf -y swap coreutils-single coreutils-full && \
+    dnf -y reinstall $(<missing-docs) && \
+    dnf -y install 'dnf-command(config-manager)' && \
+    dnf config-manager --set-enabled crb && \
+    dnf -y install epel-release && \
+    dnf -y install $(<extra-packages) && \
+    dnf -y upgrade && \
+    dnf clean all
+
+RUN rm /missing-docs /extra-packages
