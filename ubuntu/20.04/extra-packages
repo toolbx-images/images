@@ -6,3 +6,4 @@ unzip
 zip
 zsh
 curl
+flatpak-xdg-utils
