@@ -6,13 +6,14 @@ LABEL com.github.containers.toolbox="true" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating openSUSE toolbox containers" \
-      maintainer="Hari Rana <theevilskeleton@riseup.net>"
+      maintainer="Hari Rana <theevilskeleton@fedoraproject.org>"
 
-# Install extra packages
+# Update packages, install extra packages and clean up cache 
 COPY extra-packages /
 RUN zypper update -y && \
-    cat /extra-packages | xargs zypper install -y
+    cat /extra-packages | xargs zypper install -y && \
+    zypper clean
 RUN rm /extra-packages
 
-# Enable password less sudo
+# Enable sudo permission for wheel users
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
