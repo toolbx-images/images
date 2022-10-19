@@ -24,6 +24,7 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
         libnss-myhostname \
         $(cat extra-packages | xargs) && \
+    DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
     rm -rd /var/lib/apt/lists/*
 RUN rm /extra-packages
 
