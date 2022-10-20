@@ -1,0 +1,20 @@
+name: Request a package
+description: Ask for a new package to be added to an existing distribution image
+title: "New Package: <package name> - <distribution image and version>"
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: textarea
+    id: newpackage-image
+    attributes:
+      label: To which distribution image and which version should we add this package?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newpackage-reason
+    attributes:
+      label: Why should we include this package by default?
+      description: Explain why this package should be added to the image by default and why it can not be installed after.
+    validations:
+      required: true

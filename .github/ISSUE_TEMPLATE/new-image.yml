@@ -1,0 +1,26 @@
+name: Request an image for a new distribution
+description: Ask for a new distribution to be included in this repo
+title: "Add distribution: <distribution name>"
+labels: ["new-image-request", "maintainers-wanted"]
+assignees: []
+body:
+  - type: textarea
+    id: newimage-distribution
+    attributes:
+      label: Distribution name and versions requested
+    validations:
+      required: true
+
+  - type: textarea
+    id: newimage-images
+    attributes:
+      label: Where are the official container images from the distribution published?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newimage-maintainer
+    attributes:
+      label: Will you be interested in maintaining this image?
+    validations:
+      required: true

@@ -1,0 +1,40 @@
+name: Report a bug
+description: Report an issue with an existing image
+labels: ["bug"]
+assignees: []
+body:
+  - type: textarea
+    id: bug-image
+    attributes:
+      label: Image and version of the image where the issue happens
+      placeholder: Ubuntu 22.04
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: I'm using the image foo and it fails with bar.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-reproduction
+    attributes:
+      label: Reproduction steps
+      description: Steps to reproduce the bug.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-host
+    attributes:
+      label: Host distribution and version of toolbx
+    validations:
+      required: true
