@@ -35,6 +35,6 @@ body:
   - type: textarea
     id: bug-host
     attributes:
-      label: Host distribution and version of toolbx
+      label: Host distribution and version, toolbx and podman versions
     validations:
       required: true
