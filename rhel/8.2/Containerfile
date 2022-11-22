@@ -1,10 +1,9 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.2
 
-ENV NAME=rhel-toolbox VERSION=8.2
 LABEL com.github.containers.toolbox="true" \
-      com.redhat.component="$NAME" \
-      name="$NAME" \
-      version="$VERSION" \
+      com.redhat.component="rhel-toolbox" \
+      name="rhel-toolbox" \
+      version="8.2" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating RHEL toolbox containers" \
       maintainer="Timothée Ravier <tim@siosm.fr>"
