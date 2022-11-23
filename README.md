@@ -69,6 +69,9 @@ directly use the commands below:
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
   $ toolbox enter rhel-toolbox-9.0
 
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.7
+  $ toolbox enter rhel-toolbox-8.7
+
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.6
   $ toolbox enter rhel-toolbox-8.6
 
