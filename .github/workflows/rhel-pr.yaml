@@ -19,7 +19,7 @@ jobs:
   build-images:
     strategy:
       matrix:
-        release: ['8.2', '8.4', '8.6', '9.0']
+        release: ['8.2', '8.4', '8.6', '8.7', '9.0']
 
     runs-on: ubuntu-latest
     steps:
