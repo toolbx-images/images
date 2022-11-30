@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/ubi
+FROM registry.access.redhat.com/ubi9/ubi:9.0.0
 
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="rhel-toolbox" \
