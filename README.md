@@ -66,6 +66,9 @@ directly use the commands below:
   default. Note: You are free to use and redistribute UBI images, provided you
   adhere to the [Red Hat Universal Base Image End User Licensing Agreement].
   ```
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.1
+  $ toolbox enter rhel-toolbox-9.1
+
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
   $ toolbox enter rhel-toolbox-9.0
 

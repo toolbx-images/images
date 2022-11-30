@@ -1,9 +1,9 @@
-FROM registry.access.redhat.com/ubi9/ubi:9.0.0
+FROM registry.access.redhat.com/ubi9/ubi:9.1.0
 
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="rhel-toolbox" \
       name="rhel-toolbox" \
-      version="9.0" \
+      version="9.1" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating RHEL toolbox containers" \
       maintainer="Timothée Ravier <tim@siosm.fr>"
