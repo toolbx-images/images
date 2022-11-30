@@ -32,6 +32,15 @@ directly use the commands below:
   $ toolbox enter alpine-toolbox-3.16
   ```
 
+- [Amazon Linux] Note: Only Amazon Linux 2 comes with [EPEL] enabled by default:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2
+  $ toolbox enter amazonlinux-toolbox-2
+
+  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2022
+  $ toolbox enter amazonlinux-toolbox-2022
+  ```
+
 - [Arch Linux]:
   ```
   $ toolbox create --image quay.io/toolbx-images/archlinux-toolbox:latest
@@ -122,6 +131,7 @@ directly use the commands below:
 [Quay.io]: https://quay.io/
 [AlmaLinux]: https://hub.docker.com/_/almalinux
 [Alpine Linux]: https://hub.docker.com/_/alpine
+[Amazon Linux]: https://gallery.ecr.aws/amazonlinux/amazonlinux
 [Arch Linux]: https://hub.docker.com/_/archlinux/
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
 [EPEL]: https://docs.fedoraproject.org/en-US/epel/

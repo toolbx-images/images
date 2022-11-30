@@ -1,0 +1,26 @@
+FROM public.ecr.aws/amazonlinux/amazonlinux:2
+
+LABEL com.github.containers.toolbox="true" \
+  name="amazonlinux-toolbox" \
+  version="2" \
+  usage="This image is meant to be used with the toolbox command" \
+  summary="Base image for creating Amazon Linux 2 toolbx containers" \
+  maintainer="Adam Kaminski <adam@adamkaminski.com>"
+
+RUN sed -i '/tsflags=nodocs/d' /etc/yum.conf
+
+COPY packages extra-packages missing-docs /
+
+RUN yum -y install $(<packages) && \
+  amazon-linux-extras install -y $(<extra-packages) && \
+  yum -y reinstall $(<missing-docs) && \
+  yum -y upgrade && \
+  yum clean all
+
+RUN sed -i -e 's/ ALL$/ NOPASSWD:ALL/' /etc/sudoers
+RUN echo 'Defaults lecture="never"' > /etc/sudoers.d/disable-sudo-lecture
+
+RUN echo VARIANT_ID=container >> /etc/os-release
+RUN ln -s /etc/os-release /usr/lib/os-release
+
+RUN rm /{packages,extra-packages,missing-docs}
