@@ -1,8 +1,11 @@
-# Container images for toolbx
+# Container images for toolbx (and distrobox)
 
 Community maintained container images to use with [toolbx] ([GitHub]). See
 [containers/toolbox#1019] for the upstream discussion on the next steps to make
 those images more "official".
+
+You can also use them wih distrobox. See the discussion in
+[distrobox#544](https://github.com/89luca89/distrobox/issues/544).
 
 ## Available distributions and usage
 
