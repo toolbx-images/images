@@ -1,16 +1,15 @@
 FROM public.ecr.aws/amazonlinux/amazonlinux:2
 
-ENV NAME=amazonlinux-toolbox VERSION=2
 LABEL com.github.containers.toolbox="true" \
-  name="$NAME" \
-  version="$VERSION" \
+  name="amazonlinux-toolbox" \
+  version="2" \
   usage="This image is meant to be used with the toolbox command" \
   summary="Base image for creating Amazon Linux 2 toolbx containers" \
   maintainer="Adam Kaminski <adam@adamkaminski.com>"
 
 RUN sed -i '/tsflags=nodocs/d' /etc/yum.conf
 
-COPY README.md packages extra-packages missing-docs /
+COPY packages extra-packages missing-docs /
 
 RUN yum -y install $(<packages) && \
   amazon-linux-extras install -y $(<extra-packages) && \

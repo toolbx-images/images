@@ -1,14 +1,13 @@
 FROM public.ecr.aws/amazonlinux/amazonlinux:2022
 
-ENV NAME=amazonlinux-toolbox VERSION=2022
 LABEL com.github.containers.toolbox="true" \
-  name="$NAME" \
-  version="$VERSION" \
+  name="amazonlinux-toolbox" \
+  version="2022" \
   usage="This image is meant to be used with the toolbox command" \
   summary="Base image for creating Amazon Linux toolbx 2022 containers" \
   maintainer="Adam Kaminski <adam@adamkaminski.com>"
 
-COPY README.md missing-docs extra-packages /
+COPY missing-docs extra-packages /
 
 RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
 RUN dnf -y swap coreutils-single coreutils-full && \
