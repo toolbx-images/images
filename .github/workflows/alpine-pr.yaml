@@ -13,13 +13,13 @@ on:
 env:
   distro: 'alpine'
   distro_pretty: 'Alpine Linux'
-  latest_release: '3.16'
+  latest_release: '3.17'
 
 jobs:
   build-images:
     strategy:
       matrix:
-        release: ['3.16']
+        release: ['3.16', '3.17']
 
     runs-on: ubuntu-latest
     steps:
