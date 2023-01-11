@@ -1,0 +1,17 @@
+acl
+bash
+curl
+dnf
+gawk
+grep
+gzip
+info
+libcap
+nss
+p11-kit
+pam
+python3
+rpm
+sed
+systemd
+tar
