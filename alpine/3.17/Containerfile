@@ -1,8 +1,9 @@
 FROM docker.io/library/alpine:3.17
 
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      com.redhat.component="alpine-toolbox" \
+      name="alpine-toolbox" \
+      version="3.17" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Alpine Linux toolbox containers" \
       maintainer="Ricardo Arguello <ricado.arguello@gmail.com>"
