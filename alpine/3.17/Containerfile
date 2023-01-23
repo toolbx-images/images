@@ -1,7 +1,6 @@
 FROM docker.io/library/alpine:3.17
 
 LABEL com.github.containers.toolbox="true" \
-      com.redhat.component="alpine-toolbox" \
       name="alpine-toolbox" \
       version="3.17" \
       usage="This image is meant to be used with the toolbox command" \
