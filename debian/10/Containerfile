@@ -20,6 +20,9 @@ RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.
 # Prevent questions when installing packages
 ARG DEBIAN_FRONTEND=noninteractive
 
+# Make flatpak-xdg-utils usable inside the toolbox
+COPY toolbox-flatpak-xdg-utils.sh /etc/profile.d
+
 # Install extra packages as well as libnss-myhostname
 COPY extra-packages /
 RUN apt-get update && \
