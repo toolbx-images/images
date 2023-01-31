@@ -17,6 +17,9 @@ RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-lan
 # adds it too late in the order) skips this step
 RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.conf
 
+# Prevent questions when installing packages
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install extra packages as well as libnss-myhostname
 COPY extra-packages /
 RUN apt-get update && \
