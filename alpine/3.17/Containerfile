@@ -19,3 +19,6 @@ RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
 
 # Copy the os-release file
 RUN cp -p /etc/os-release /usr/lib/os-release
+
+# Ensure that /media is a symlink to /run/media
+RUN rm -rf /media && ln -snf /run/media /media

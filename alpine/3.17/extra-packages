@@ -15,6 +15,7 @@ iproute2
 iputils
 keyutils
 less
+libcap
 man-pages
 mandoc
 musl-utils
