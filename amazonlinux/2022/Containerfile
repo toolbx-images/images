@@ -12,7 +12,7 @@ COPY missing-docs extra-packages /
 RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
 RUN dnf -y swap coreutils-single coreutils-full && \
   dnf -y reinstall $(<missing-docs) && \
-  dnf -y install $(<extra-packages) && \
+  dnf -y install --allowerasing $(<extra-packages) && \
   dnf -y upgrade && \
   dnf clean all
 
