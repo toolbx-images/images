@@ -1,10 +1,9 @@
 FROM docker.io/library/rockylinux:8
 
-ENV NAME=rockylinux-toolbox VERSION=8
 LABEL com.github.containers.toolbox="true" \
-      com.redhat.component="$NAME" \
-      name="$NAME" \
-      version="$VERSION" \
+      com.redhat.component="rockylinux-toolbox" \
+      name="rockylinux-toolbox" \
+      version="8" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Rocky Linux toolbox containers" \
       maintainer="Ricardo Arguello <ricado.arguello@gmail.com>"

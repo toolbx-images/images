@@ -1,10 +1,9 @@
 FROM docker.io/library/almalinux:8
 
-ENV NAME=almalinux-toolbox VERSION=8
 LABEL com.github.containers.toolbox="true" \
-      com.redhat.component="$NAME" \
-      name="$NAME" \
-      version="$VERSION" \
+      com.redhat.component="almalinux-toolbox" \
+      name="almalinux-toolbox" \
+      version="8" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating AlmaLinux toolbox containers" \
       maintainer="Ricardo Arguello <ricado.arguello@gmail.com>"

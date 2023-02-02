@@ -1,9 +1,8 @@
 FROM registry.opensuse.org/opensuse/toolbox:latest
 
-ENV NAME=opensuse-toolbox VERSION=tumbleweed
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      name="opensuse-toolbox" \
+      version="tumbleweed" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating openSUSE toolbox containers" \
       maintainer="Hari Rana <theevilskeleton@fedoraproject.org>"
