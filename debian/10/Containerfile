@@ -1,9 +1,8 @@
 FROM docker.io/library/debian:10
 
-ENV NAME=debian-toolbox VERSION=10
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      name="debian-toolbox" \
+      version="10" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Debian toolbox containers" \
       maintainer=""

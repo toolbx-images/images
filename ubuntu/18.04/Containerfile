@@ -1,9 +1,8 @@
 FROM docker.io/library/ubuntu:18.04
 
-ENV NAME=ubuntu-toolbox VERSION=18.04
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      name="ubuntu-toolbox" \
+      version="18.04" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Ubuntu toolbox containers" \
       maintainer="Ievgen Popovych <jmennius@gmail.com>"

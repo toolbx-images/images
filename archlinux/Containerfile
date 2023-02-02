@@ -1,9 +1,8 @@
 FROM docker.io/library/archlinux:base-devel
 
-ENV NAME=archlinux-toolbox VERSION=base-devel
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      name="archlinux-toolbox" \
+      version="base-devel" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Arch Linux toolbox containers" \
       maintainer="Morten Linderud <foxboron@archlinux.org>"

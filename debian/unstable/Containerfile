@@ -1,9 +1,8 @@
 FROM docker.io/library/debian:unstable
 
-ENV NAME=debian-toolbox VERSION=unstable
 LABEL com.github.containers.toolbox="true" \
-      name="$NAME" \
-      version="$VERSION" \
+      name="debian-toolbox" \
+      version="unstable" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Debian toolbox containers" \
       maintainer=""
