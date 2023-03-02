@@ -19,7 +19,7 @@ jobs:
   build-images:
     strategy:
       matrix:
-        release: ['3.16', '3.17']
+        release: ['3.16', '3.17', 'edge']
 
     runs-on: ubuntu-latest
     steps:
