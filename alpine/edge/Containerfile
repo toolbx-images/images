@@ -1,0 +1,24 @@
+FROM docker.io/library/alpine:edge
+
+LABEL com.github.containers.toolbox="true" \
+      name="alpine-toolbox" \
+      version="edge" \
+      usage="This image is meant to be used with the toolbox command" \
+      summary="Base image for creating Alpine Linux toolbox containers" \
+      maintainer="Jorge O. Castro <jorge.castro@gmail.com>"
+
+# Install extra packages
+COPY extra-packages /
+RUN apk update && \
+    apk upgrade && \
+    cat /extra-packages | xargs apk add
+RUN rm /extra-packages
+
+# Enable password less sudo
+RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
+
+# Copy the os-release file
+RUN cp -p /etc/os-release /usr/lib/os-release
+
+# Clear out /media
+RUN rm -rf /media
