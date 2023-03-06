@@ -6,7 +6,7 @@ dnf-plugins-core
 findutils
 flatpak-spawn
 git
-gnupg
+gnupg2
 gnupg2-smime
 gvfs-client
 hostname
