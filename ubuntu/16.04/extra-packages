@@ -1,8 +1,9 @@
+curl
 git
-keyutils
 gnupg2
+keyutils
+libcap2-bin
 tree
 unzip
 zip
 zsh
-curl
