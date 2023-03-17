@@ -1,8 +1,8 @@
+curl
 git
-keyutils
 gnupg2
+keyutils
 tree
 unzip
 zip
 zsh
-curl
