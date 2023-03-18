@@ -3,7 +3,6 @@ flatpak-xdg-utils
 git
 gnupg2
 keyutils
-libcap2-bin
 tree
 unzip
 zip
