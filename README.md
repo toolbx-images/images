@@ -30,6 +30,9 @@ directly use the commands below:
 
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.16
   $ toolbox enter alpine-toolbox-3.16
+
+  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
+  $ toolbox enter alpine-toolbox-edge
   ```
 
 - [Amazon Linux] Note: Only Amazon Linux 2 comes with [EPEL] enabled by default:
