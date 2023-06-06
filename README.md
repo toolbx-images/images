@@ -61,10 +61,17 @@ directly use the commands below:
   $ toolbox enter amazonlinux-toolbox-2
   ```
 
-- [Arch Linux]:
+- [Arch Linux]: The images are now maintained as part of [Toolbx] ([GitHub])
+  ([repo on Quay.io](https://quay.io/repository/toolbx/arch-toolbox)). Usage:
   ```
-  $ toolbox create --image quay.io/toolbx-images/archlinux-toolbox:latest
-  $ toolbox enter archlinux-toolbox-latest
+  $ toolbox create --distro arch
+  $ toolbox enter arch-toolbox-latest
+  ```
+
+  Or, alternatively:
+  ```
+  $ toolbox create --image quay.io/toolbx/arch-toolbox:latest
+  $ toolbox enter arch-toolbox-latest
   ```
 
 - [CentOS (Stream)] with [EPEL] enabled by default:
