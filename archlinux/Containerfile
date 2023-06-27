@@ -7,6 +7,12 @@ LABEL com.github.containers.toolbox="true" \
       summary="Base image for creating Arch Linux toolbox containers" \
       maintainer="Morten Linderud <foxboron@archlinux.org>"
 
+# Enable myhostname nss plugin for clean hostname resolution without patching
+# hosts (at least for sudo), add it right after 'mymachines' entry.
+RUN sed -Ei 's/^(hosts:.*)(\<mymachines\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.conf
+# .. remove repeated 'myhostname' from the hosts line
+RUN sed -Ei 's/^(.*?myhostname.*)?\s+myhostname\s+(.*)/\1 \2/' /etc/nsswitch.conf
+
 # Install extra packages
 COPY extra-packages /
 RUN pacman -Syu --needed --noconfirm - < extra-packages
