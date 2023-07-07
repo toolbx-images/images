@@ -13,13 +13,13 @@ on:
 env:
   distro: 'rhel'
   distro_pretty: 'RHEL'
-  latest_release: '9.1'
+  latest_release: '9.2'
 
 jobs:
   build-images:
     strategy:
       matrix:
-        release: ['8.2', '8.4', '8.6', '8.7', '9.0', '9.1']
+        release: ['8.2', '8.4', '8.6', '8.7', '8.8', '9.0', '9.1', '9.2']
 
     runs-on: ubuntu-latest
     steps:
