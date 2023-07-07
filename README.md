@@ -87,11 +87,17 @@ directly use the commands below:
   default. Note: You are free to use and redistribute UBI images, provided you
   adhere to the [Red Hat Universal Base Image End User Licensing Agreement].
   ```
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.2
+  $ toolbox enter rhel-toolbox-9.2
+
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.1
   $ toolbox enter rhel-toolbox-9.1
 
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
   $ toolbox enter rhel-toolbox-9.0
+
+  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.8
+  $ toolbox enter rhel-toolbox-8.8
 
   $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.7
   $ toolbox enter rhel-toolbox-8.7
