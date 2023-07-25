@@ -24,7 +24,7 @@ jobs:
   build-and-push-images:
     strategy:
       matrix:
-        release: ['10', '11', 'testing', 'unstable']
+        release: ['10', '11', '12', 'testing', 'unstable']
 
     runs-on: ubuntu-latest
     steps:
