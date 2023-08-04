@@ -1,0 +1,33 @@
+FROM docker.io/gentoo/portage:latest as portage
+
+FROM docker.io/gentoo/stage3:latest
+
+LABEL com.github.containers.toolbox="true" \
+      name="gentoo-toolbox" \
+      version="latest" \
+      usage="This image is meant to be used with the toolbox command" \
+      summary="Base image for creating Gentoo toolbox containers" \
+      maintainer="Robin Lee <robinlee.sysu@gmail.com>"
+
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
+
+# build all UTF-8 locales
+RUN echo > /etc/env.d/02locale && grep UTF-8 /usr/share/i18n/SUPPORTED > /etc/locale.gen && locale-gen
+
+# flatpak-spawn is not available in offical Gentoo repo
+RUN mkdir /etc/portage/repos.conf
+COPY toolbox.conf /etc/portage/repos.conf
+COPY toolbox /var/db/repos/toolbox
+COPY extra-packages /
+
+RUN echo -e 'x11-misc/flatpak-xdg-utils\nsys-auth/nss-mdns' > /etc/portage/package.accept_keywords/toolbox && \
+    emerge --noreplace --verbose $(<extra-packages)
+
+# Make flatpak-xdg-utils usable inside the toolbox
+COPY toolbox-flatpak-xdg-utils.sh /etc/profile.d
+
+# Enable sudo permission for wheel users
+RUN mkdir /etc/sudoers.d && chmod 700 /etc/sudoers.d && echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
+
+# Clean up
+RUN rm -frv /var/db/repos/gentoo extra-packages

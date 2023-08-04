@@ -80,6 +80,15 @@ directly use the commands below:
   $ toolbox enter debian-toolbox-10
   ```
 
+- [Gentoo]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/gentoo-toolbox:latest
+  $ toolbox enter gentoo-toolbox-latest
+
+  $ toolbox create --image quay.io/toolbx-images/gentoo-toolbox:systemd
+  $ toolbox enter gentoo-toolbox-systemd
+  ```
+
 - [openSUSE]:
   ```
   $ toolbox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed
@@ -151,6 +160,7 @@ directly use the commands below:
 [CentOS (Stream)]: https://www.centos.org/centos-stream/
 [EPEL]: https://docs.fedoraproject.org/en-US/epel/
 [Debian]: https://hub.docker.com/_/debian
+[Gentoo]: https://hub.docker.com/u/gentoo
 [Red Hat Enterprise Linux (Universal Base Image)]: https://developers.redhat.com/products/rhel/ubi
 [Red Hat Universal Base Image End User Licensing Agreement]: https://www.redhat.com/licenses/EULA_Red_Hat_Universal_Base_Image_English_20190422.pdf
 [Rocky Linux]: https://hub.docker.com/_/rockylinux
