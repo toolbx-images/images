@@ -40,11 +40,11 @@ directly use the commands below:
 
 - [Amazon Linux] Note: Only Amazon Linux 2 comes with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2023
+  $ toolbox enter amazonlinux-toolbox-2023
+
   $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2
   $ toolbox enter amazonlinux-toolbox-2
-
-  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2022
-  $ toolbox enter amazonlinux-toolbox-2022
   ```
 
 - [Arch Linux]:
