@@ -18,13 +18,13 @@ concurrency: ${{ github.workflow }}
 env:
   distro: 'amazonlinux'
   distro_pretty: 'Amazon Linux'
-  latest_release: '2022'
+  latest_release: '2023'
 
 jobs:
   build-and-push-images:
     strategy:
       matrix:
-        release: ['2', '2022']
+        release: ['2', '2023']
 
     runs-on: ubuntu-latest
     steps:
