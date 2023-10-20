@@ -19,7 +19,7 @@ jobs:
   build-images:
     strategy:
       matrix:
-        release: ['37', '38', '39']
+        release: ['37', '38', '39', '40']
 
     runs-on: ubuntu-latest
     steps:
