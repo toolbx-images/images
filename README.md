@@ -12,7 +12,21 @@ You can also use them wih distrobox. See the discussion in
 You can find all images in the [toolbx-images organization] on [Quay.io], or
 directly use the commands below:
 
-- Fedora: See the official images (default in toolbx)
+- [Fedora]: Alternative to the official Fedora images until [toolbox#1389] is
+  fixed:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:40
+  $ toolbox enter fedora-toolbox-40
+
+  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:39
+  $ toolbox enter fedora-toolbox-39
+
+  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:38
+  $ toolbox enter fedora-toolbox-38
+
+  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:37
+  $ toolbox enter fedora-toolbox-37
+  ```
 
 - [AlmaLinux] with [EPEL] enabled by default:
   ```
@@ -144,6 +158,8 @@ directly use the commands below:
 [containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
 [toolbx-images organization]: https://quay.io/organization/toolbx-images
 [Quay.io]: https://quay.io/
+[Fedora]: https://quay.io/repository/fedora/fedora-toolbox
+[toolbox#1389]: https://github.com/containers/toolbox/issues/1389
 [AlmaLinux]: https://hub.docker.com/_/almalinux
 [Alpine Linux]: https://hub.docker.com/_/alpine
 [Amazon Linux]: https://gallery.ecr.aws/amazonlinux/amazonlinux
