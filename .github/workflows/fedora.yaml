@@ -18,13 +18,13 @@ concurrency: ${{ github.workflow }}
 env:
   distro: 'fedora'
   distro_pretty: 'fedora'
-  latest_release: 'f38'
+  latest_release: '38'
 
 jobs:
   build-and-push-images:
     strategy:
       matrix:
-        release: ['f37', 'f38', 'f39']
+        release: ['37', '38', '39']
 
     runs-on: ubuntu-latest
     steps:
