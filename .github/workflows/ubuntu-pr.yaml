@@ -13,13 +13,13 @@ on:
 env:
   distro: 'ubuntu'
   distro_pretty: 'Ubuntu'
-  latest_release: '22.04'
+  latest_release: '23.10'
 
 jobs:
   build-images:
     strategy:
       matrix:
-        release: ['16.04', '18.04', '20.04', '22.04', '22.10']
+        release: ['16.04', '18.04', '20.04', '22.04', '23.04', '23.10']
 
     runs-on: ubuntu-latest
     steps:

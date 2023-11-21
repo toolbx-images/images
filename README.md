@@ -140,6 +140,12 @@ directly use the commands below:
 
 - [Ubuntu]:
   ```
+  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:23.10
+  $ toolbox enter ubuntu-toolbox-23.10
+
+  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:23.04
+  $ toolbox enter ubuntu-toolbox-23.04
+
   $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
   $ toolbox enter ubuntu-toolbox-22.04
 
