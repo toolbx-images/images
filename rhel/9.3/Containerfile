@@ -1,9 +1,9 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.7
+FROM registry.access.redhat.com/ubi9/ubi:9.3
 
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="rhel-toolbox" \
       name="rhel-toolbox" \
-      version="8.7" \
+      version="9.3" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating RHEL toolbox containers" \
       maintainer="Timothée Ravier <tim@siosm.fr>"
@@ -14,7 +14,7 @@ COPY missing-docs extra-packages /
 
 RUN dnf -y swap coreutils-single coreutils-full && \
     dnf -y reinstall $(<missing-docs) && \
-    dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+    dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
     dnf -y install $(<extra-packages) && \
     dnf -y upgrade && \
     dnf clean all
