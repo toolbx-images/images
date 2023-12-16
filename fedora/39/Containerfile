@@ -34,4 +34,14 @@ RUN ret_val=0; \
     false; \
   fi
 
+RUN broken_packages="$(rpm --all --query --state --queryformat "PACKAGE: %{NAME}\n" \
+  | sed --quiet --regexp-extended '/PACKAGE: /{s/PACKAGE: // ; h ; b }; /^not installed/ { g; p }' \
+  | uniq \
+  | sort)"; \
+  if [ "$broken_packages" != "" ]; then \
+    echo "Packages with missing files:" >&2; \
+    echo "$broken_packages" >&2; \
+    false; \
+  fi
+
 RUN rm /missing-docs /extra-packages /ensure-files
