@@ -22,9 +22,6 @@ directly use the commands below:
 
   $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:38
   $ toolbox enter fedora-toolbox-38
-
-  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:37
-  $ toolbox enter fedora-toolbox-37
   ```
 
 - [AlmaLinux] with [EPEL] enabled by default:
