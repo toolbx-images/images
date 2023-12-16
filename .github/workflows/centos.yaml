@@ -77,7 +77,7 @@ jobs:
           username: ${{ secrets.BOT_USERNAME }}
           password: ${{ secrets.BOT_SECRET }}
           image: ${{ env.distro }}-toolbox
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ env.registry }}
           tags: ${{ matrix.release }}
 
       - name: Push to Container Registry (latest tag)
@@ -87,5 +87,5 @@ jobs:
           username: ${{ secrets.BOT_USERNAME }}
           password: ${{ secrets.BOT_SECRET }}
           image: ${{ env.distro }}-toolbox
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ env.registry }}
           tags: ${{ matrix.release }} latest
