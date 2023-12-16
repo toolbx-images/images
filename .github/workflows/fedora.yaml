@@ -21,7 +21,7 @@ on:
 env:
   distro: 'fedora'
   distro_pretty: 'fedora'
-  latest_release: '38'
+  latest_release: '39'
   platforms: 'linux/amd64, linux/arm64, linux/ppc64le'
   registry: 'quay.io/toolbx-images'
 
