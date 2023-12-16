@@ -19,7 +19,7 @@ env:
   distro: 'fedora'
   distro_pretty: 'fedora'
   latest_release: '38'
-  platforms: 'linux/amd64, linux/arm64'
+  platforms: 'linux/amd64, linux/arm64, linux/ppc64le'
   registry: 'quay.io/toolbx-images'
 
 # Prevent multiple workflow runs from racing to ensure that pushes are made
