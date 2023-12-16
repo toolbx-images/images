@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - ubuntu/**
+      - .github/workflows/ubuntu.yaml
   push:
     branches:
       - main

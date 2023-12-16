@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - rockylinux/**
+      - .github/workflows/rockylinux.yaml
   push:
     branches:
       - main

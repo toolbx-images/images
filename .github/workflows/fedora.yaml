@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - fedora/**
+      - .github/workflows/fedora.yaml
   push:
     branches:
       - main

@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - alpine/**
+      - .github/workflows/alpine.yaml
   push:
     branches:
       - main
