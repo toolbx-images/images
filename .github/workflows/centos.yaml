@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - centos/**
+      - .github/workflows/centos.yaml
   push:
     branches:
       - main

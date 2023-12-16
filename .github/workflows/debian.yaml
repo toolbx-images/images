@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - debian/**
+      - .github/workflows/debian.yaml
   push:
     branches:
       - main

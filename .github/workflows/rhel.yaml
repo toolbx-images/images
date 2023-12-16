@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - rhel/**
+      - .github/workflows/rhel.yaml
   push:
     branches:
       - main
