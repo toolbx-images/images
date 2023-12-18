@@ -158,6 +158,58 @@ directly use the commands below:
   $ toolbox enter ubuntu-toolbox-16.04
   ```
 
+## Verifying sigstore container signatures with podman
+
+How to configure sigstore signature verification in podman:
+
+```
+$ sudo mkdir /etc/pki/containers
+$ curl -O "https://raw.githubusercontent.com/toolbox-images/images/main/quay.io-toolbx-images.pub"
+$ sudo cp quay.io-toolbx-images.pub /etc/pki/containers/
+$ sudo restorecon -RFv /etc/pki/containers
+
+$ cat /etc/containers/registries.d/quay.io-toolbx-images.yaml
+docker:
+  quay.io/toolbx-images:
+    use-sigstore-attachments: true
+$ sudo restorecon -RFv /etc/containers/registries.d/quay.io-toolbx-images.yaml
+
+$ cat /etc/containers/policy.json
+{
+    "default": [
+        {
+            "type": "reject"
+        }
+    ],
+    "transports": {
+        "docker": {
+            ...
+            "quay.io/toolbx-images": [
+                {
+                    "type": "sigstoreSigned",
+                    "keyPath": "/etc/pki/containers/quay.io-toolbx-images.pub",
+                    "signedIdentity": {
+                        "type": "matchRepository"
+                    }
+                }
+            ],
+            ...
+            "": [
+                {
+                    "type": "insecureAcceptAnything"
+                }
+            ]
+        },
+        ...
+    }
+}
+...
+```
+
+## License
+
+See [COPYING](COPYING).
+
 [toolbx]: https://containertoolbx.org
 [GitHub]: https://github.com/containers/toolbox
 [containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
