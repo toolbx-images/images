@@ -164,7 +164,7 @@ How to configure sigstore signature verification in podman:
 
 ```
 $ sudo mkdir /etc/pki/containers
-$ curl -O "https://raw.githubusercontent.com/toolbox-images/images/main/quay.io-toolbx-images.pub"
+$ curl -O "https://raw.githubusercontent.com/toolbx-images/images/main/quay.io-toolbx-images.pub"
 $ sudo cp quay.io-toolbx-images.pub /etc/pki/containers/
 $ sudo restorecon -RFv /etc/pki/containers
 
