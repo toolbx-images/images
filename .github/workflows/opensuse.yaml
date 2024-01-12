@@ -46,6 +46,7 @@ jobs:
       - name: Set up QEMU for multi-arch builds
         shell: bash
         run: |
+          sudo apt update
           sudo apt install qemu-user-static
 
       - name: Build container image
