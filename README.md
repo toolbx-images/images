@@ -100,33 +100,17 @@ directly use the commands below:
   $ toolbox enter opensuse-toolbox-tumbleweed
   ```
 
-- [Red Hat Enterprise Linux (Universal Base Image)] with [EPEL] enabled by
-  default. Note: You are free to use and redistribute UBI images, provided you
-  adhere to the [Red Hat Universal Base Image End User Licensing Agreement].
+- [Red Hat Enterprise Linux (Universal Base Image)]: The images are now
+  maintained by Red Hat and their sources are part of [Toolbx] ([GitHub]) (repo
+  on `registry.access.redhat.com` for RHEL [8](https://catalog.redhat.com/software/containers/ubi8/toolbox/611bd665bd674341b5c5ed46)
+  and [9](https://catalog.redhat.com/software/containers/ubi9/toolbox/61532d7dd2c7f84a4d2ed86b)).
+  Usage:
   ```
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.2
-  $ toolbox enter rhel-toolbox-9.2
+  $ toolbox create --distro rhel --release 9.3
+  $ toolbox enter rhel-toolbox-9.3
 
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.1
-  $ toolbox enter rhel-toolbox-9.1
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:9.0
-  $ toolbox enter rhel-toolbox-9.0
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.8
-  $ toolbox enter rhel-toolbox-8.8
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.7
-  $ toolbox enter rhel-toolbox-8.7
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.6
-  $ toolbox enter rhel-toolbox-8.6
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.4
-  $ toolbox enter rhel-toolbox-8.4
-
-  $ toolbox create --image quay.io/toolbx-images/rhel-toolbox:8.2
-  $ toolbox enter rhel-toolbox-8.2
+  $ toolbox create --distro rhel --release 8.9
+  $ toolbox enter rhel-toolbox-8.9
   ```
 
 - [Rocky Linux] with [EPEL] enabled by default:
