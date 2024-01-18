@@ -12,15 +12,16 @@ You can also use them wih distrobox. See the discussion in
 You can find all images in the [toolbx-images organization] on [Quay.io], or
 directly use the commands below:
 
-- [Fedora]: Slightly smaller alternative to the official Fedora images:
+- [Fedora]: The images are now maintained as part of [Toolbx] ([GitHub]) (repo
+  on `registry.fedoraproject.org`). Usage:
   ```
-  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:40
+  $ toolbox create --distro fedora --release 40
   $ toolbox enter fedora-toolbox-40
 
-  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:39
+  $ toolbox create --distro fedora --release 39
   $ toolbox enter fedora-toolbox-39
 
-  $ toolbox create --image quay.io/toolbx-images/fedora-toolbox:38
+  $ toolbox create --distro fedora --release 38
   $ toolbox enter fedora-toolbox-38
   ```
 
