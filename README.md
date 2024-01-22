@@ -122,24 +122,46 @@ directly use the commands below:
   $ toolbox enter rockylinux-toolbox-8
   ```
 
-- [Ubuntu]:
+- [Ubuntu]: The images are now maintained as part of [Toolbx] ([GitHub]) ([repo
+  on Quay.io](https://quay.io/repository/toolbx/ubuntu-toolbox)). Usage:
   ```
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:23.10
+  $ toolbox create --distro ubuntu --release 23.10
   $ toolbox enter ubuntu-toolbox-23.10
 
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:23.04
+  $ toolbox create --distro ubuntu --release 23.04
   $ toolbox enter ubuntu-toolbox-23.04
 
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04
+  $ toolbox create --distro ubuntu --release 22.04
   $ toolbox enter ubuntu-toolbox-22.04
 
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:20.04
+  $ toolbox create --distro ubuntu --release 20.04
   $ toolbox enter ubuntu-toolbox-20.04
 
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:18.04
+  $ toolbox create --distro ubuntu --release 18.04
   $ toolbox enter ubuntu-toolbox-18.04
 
-  $ toolbox create --image quay.io/toolbx-images/ubuntu-toolbox:16.04
+  $ toolbox create --distro ubuntu --release 16.04
+  $ toolbox enter ubuntu-toolbox-16.04
+  ```
+
+  Or, alternatively:
+  ```
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:23.10
+  $ toolbox enter ubuntu-toolbox-23.10
+
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:23.04
+  $ toolbox enter ubuntu-toolbox-23.04
+
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:22.04
+  $ toolbox enter ubuntu-toolbox-22.04
+
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:20.04
+  $ toolbox enter ubuntu-toolbox-20.04
+
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:18.04
+  $ toolbox enter ubuntu-toolbox-18.04
+
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:16.04
   $ toolbox enter ubuntu-toolbox-16.04
   ```
 
