@@ -26,7 +26,7 @@ env:
   registry: 'quay.io/toolbx-images'
 
 # Prevent multiple workflow runs from racing to ensure that pushes are made
-# sequentialy for the main branch. Also cancel in progress workflow runs for
+# sequentially for the main branch. Also cancel in progress workflow runs for
 # pull requests only.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
