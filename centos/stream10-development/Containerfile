@@ -1,0 +1,25 @@
+FROM quay.io/centos/centos:stream10-development
+
+LABEL com.github.containers.toolbox="true" \
+      com.redhat.component="centos-toolbox" \
+      name="centos-toolbox" \
+      version="stream10-development" \
+      usage="This image is meant to be used with the toolbox command" \
+      summary="Base image for creating CentOS toolbox containers" \
+      maintainer="Timothée Ravier <tim@siosm.fr>"
+
+RUN rm /etc/rpm/macros.image-language-conf
+RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
+
+COPY missing-docs extra-packages /
+
+RUN dnf -y upgrade && \
+    dnf -y swap coreutils-single coreutils-full && \
+    dnf -y swap glibc-minimal-langpack glibc-all-langpacks && \
+    dnf -y reinstall $(<missing-docs) && \
+    dnf -y install 'dnf-command(config-manager)' && \
+    dnf config-manager --set-enabled crb && \
+    dnf -y install $(<extra-packages) && \
+    dnf clean all
+
+RUN rm /missing-docs /extra-packages

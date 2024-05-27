@@ -36,7 +36,7 @@ jobs:
   build-push-images:
     strategy:
       matrix:
-        release: ['stream8', 'stream9']
+        release: ['stream8', 'stream9', 'stream10-development']
 
     runs-on: ubuntu-latest
     steps:
