@@ -21,3 +21,6 @@ RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/sudoers
 
 # Copy the os-release file
 RUN cp -p /etc/os-release /usr/lib/os-release
+
+# Clear out /home
+RUN rm -rf /home/* && mkdir /media
