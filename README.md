@@ -175,6 +175,12 @@ directly use the commands below:
   $ toolbox enter ubuntu-toolbox-16.04
   ```
 
+- [Wolfi]:
+  ```
+  $ toolbox create --image quay.io/toolbx-images/wolfi-toolbox:latest
+  $ toolbox enter wolfi-toolbox-latest
+  ```
+
 ## Verifying sigstore container signatures with podman
 
 How to configure sigstore signature verification in podman:
@@ -246,3 +252,4 @@ See [COPYING](COPYING).
 [Rocky Linux]: https://hub.docker.com/_/rockylinux
 [Ubuntu]: https://hub.docker.com/_/ubuntu
 [openSUSE]: https://registry.opensuse.org/cgi-bin/cooverview?srch_term=project%3D%5EopenSUSE%3AContainers%3A+container%3Dtoolbox
+[Wolfi]: cgr.dev/chainguard/
