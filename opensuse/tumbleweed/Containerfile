@@ -10,7 +10,7 @@ LABEL com.github.containers.toolbox="true" \
 # Update packages, install extra packages and clean up cache 
 COPY extra-packages /
 RUN zypper update -y && \
-    zypper install -y findutils && \
+    zypper install -y findutils diffutils && \
     cat /extra-packages | xargs zypper install -y && \
     zypper clean
 RUN rm /extra-packages
