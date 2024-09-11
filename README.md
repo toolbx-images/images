@@ -135,6 +135,9 @@ directly use the commands below:
 - [Ubuntu]: The images are now maintained as part of [Toolbx] ([GitHub]) ([repo
   on Quay.io](https://quay.io/repository/toolbx/ubuntu-toolbox)). Usage:
   ```
+  $ toolbox create --distro ubuntu --release 24.04
+  $ toolbox enter ubuntu-toolbox-24.04
+    
   $ toolbox create --distro ubuntu --release 23.10
   $ toolbox enter ubuntu-toolbox-23.10
 
@@ -156,6 +159,9 @@ directly use the commands below:
 
   Or, alternatively:
   ```
+  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:24.04
+  $ toolbox enter ubuntu-toolbox-24.04
+  
   $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:23.10
   $ toolbox enter ubuntu-toolbox-23.10
 
