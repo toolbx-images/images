@@ -4,26 +4,14 @@ Community maintained container images to use with [toolbx] ([GitHub]). See
 [containers/toolbox#1019] for the upstream discussion on the next steps to make
 those images more "official".
 
-You can also use them wih distrobox. See the discussion in
-[distrobox#544](https://github.com/89luca89/distrobox/issues/544).
+You can also use them wih distrobox. See the discussion in [distrobox#544].
+
+### ⚠️ Looking for Arch Linux, Fedora, RHEL and Ubuntu images? See [below].
 
 ## Available distributions and usage
 
 You can find all images in the [toolbx-images organization] on [Quay.io], or
 directly use the commands below:
-
-- [Fedora]: The images are now maintained as part of [Toolbx] ([GitHub]) (repo
-  on `registry.fedoraproject.org`). Usage:
-  ```
-  $ toolbox create --distro fedora --release 40
-  $ toolbox enter fedora-toolbox-40
-
-  $ toolbox create --distro fedora --release 39
-  $ toolbox enter fedora-toolbox-39
-
-  $ toolbox create --distro fedora --release 38
-  $ toolbox enter fedora-toolbox-38
-  ```
 
 - [AlmaLinux] with [EPEL] enabled by default:
   ```
@@ -64,19 +52,6 @@ directly use the commands below:
   $ toolbox enter amazonlinux-toolbox-2
   ```
 
-- [Arch Linux]: The images are now maintained as part of [Toolbx] ([GitHub])
-  ([repo on Quay.io](https://quay.io/repository/toolbx/arch-toolbox)). Usage:
-  ```
-  $ toolbox create --distro arch
-  $ toolbox enter arch-toolbox-latest
-  ```
-
-  Or, alternatively:
-  ```
-  $ toolbox create --image quay.io/toolbx/arch-toolbox:latest
-  $ toolbox enter arch-toolbox-latest
-  ```
-
 - [CentOS (Stream)] with [EPEL] enabled by default:
   ```
   $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
@@ -110,19 +85,6 @@ directly use the commands below:
   $ toolbox enter opensuse-toolbox-tumbleweed
   ```
 
-- [Red Hat Enterprise Linux (Universal Base Image)]: The images are now
-  maintained by Red Hat and their sources are part of [Toolbx] ([GitHub]) (repo
-  on `registry.access.redhat.com` for RHEL [8](https://catalog.redhat.com/software/containers/ubi8/toolbox/611bd665bd674341b5c5ed46)
-  and [9](https://catalog.redhat.com/software/containers/ubi9/toolbox/61532d7dd2c7f84a4d2ed86b)).
-  Usage:
-  ```
-  $ toolbox create --distro rhel --release 9.3
-  $ toolbox enter rhel-toolbox-9.3
-
-  $ toolbox create --distro rhel --release 8.9
-  $ toolbox enter rhel-toolbox-8.9
-  ```
-
 - [Rocky Linux] with [EPEL] enabled by default:
   ```
   $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
@@ -130,55 +92,6 @@ directly use the commands below:
 
   $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:8
   $ toolbox enter rockylinux-toolbox-8
-  ```
-
-- [Ubuntu]: The images are now maintained as part of [Toolbx] ([GitHub]) ([repo
-  on Quay.io](https://quay.io/repository/toolbx/ubuntu-toolbox)). Usage:
-  ```
-  $ toolbox create --distro ubuntu --release 24.04
-  $ toolbox enter ubuntu-toolbox-24.04
-    
-  $ toolbox create --distro ubuntu --release 23.10
-  $ toolbox enter ubuntu-toolbox-23.10
-
-  $ toolbox create --distro ubuntu --release 23.04
-  $ toolbox enter ubuntu-toolbox-23.04
-
-  $ toolbox create --distro ubuntu --release 22.04
-  $ toolbox enter ubuntu-toolbox-22.04
-
-  $ toolbox create --distro ubuntu --release 20.04
-  $ toolbox enter ubuntu-toolbox-20.04
-
-  $ toolbox create --distro ubuntu --release 18.04
-  $ toolbox enter ubuntu-toolbox-18.04
-
-  $ toolbox create --distro ubuntu --release 16.04
-  $ toolbox enter ubuntu-toolbox-16.04
-  ```
-
-  Or, alternatively:
-  ```
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:24.04
-  $ toolbox enter ubuntu-toolbox-24.04
-  
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:23.10
-  $ toolbox enter ubuntu-toolbox-23.10
-
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:23.04
-  $ toolbox enter ubuntu-toolbox-23.04
-
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:22.04
-  $ toolbox enter ubuntu-toolbox-22.04
-
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:20.04
-  $ toolbox enter ubuntu-toolbox-20.04
-
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:18.04
-  $ toolbox enter ubuntu-toolbox-18.04
-
-  $ toolbox create --image quay.io/toolbx/ubuntu-toolbox:16.04
-  $ toolbox enter ubuntu-toolbox-16.04
   ```
 
 - [Wolfi]:
@@ -235,6 +148,41 @@ $ cat /etc/containers/policy.json
 ...
 ```
 
+## What about Arch Linux, Fedora, RHEL and Ubuntu images?
+
+The Arch Linux, Fedora and Ubuntu images are now maintained as part of [Toolbx]
+([GitHub]):
+
+- [Arch Linux] ([repo on Quay.io][ArchLinuxRepo]). Usage:
+  ```
+  $ toolbox create --distro arch
+  $ toolbox enter arch-toolbox-latest
+  ```
+
+- [Fedora] (repo on `registry.fedoraproject.org`). Usage:
+  ```
+  # Example for Fedora 40
+  $ toolbox create --distro fedora --release 40
+  $ toolbox enter fedora-toolbox-40
+  ```
+
+- [Ubuntu] ([repo on Quay.io][UbuntuRepo]). Usage:
+  ```
+  # Example for Ubuntu 24.04
+  $ toolbox create --distro ubuntu --release 24.04
+  $ toolbox enter ubuntu-toolbox-24.04
+  ```
+
+The [Red Hat Enterprise Linux (Universal Base Image)] images are now maintained
+by Red Hat and their sources are part of [Toolbx] ([GitHub]) (repo on
+`registry.access.redhat.com` for [RHEL 8] and [RHEL 9]. Usage:
+
+```
+# Example for RHEL 9.4
+$ toolbox create --distro rhel --release 9.4
+$ toolbox enter rhel-toolbox-9.4
+```
+
 ## License
 
 See [COPYING](COPYING).
@@ -242,9 +190,15 @@ See [COPYING](COPYING).
 [toolbx]: https://containertoolbx.org
 [GitHub]: https://github.com/containers/toolbox
 [containers/toolbox#1019]: https://github.com/containers/toolbox/issues/1019
+[distrobox#544]: https://github.com/89luca89/distrobox/issues/544
+[below]: #what-about-arch-linux-fedora-rhel-and-ubuntu-images
 [toolbx-images organization]: https://quay.io/organization/toolbx-images
 [Quay.io]: https://quay.io/
 [Fedora]: https://quay.io/repository/fedora/fedora-toolbox
+[ArchLinuxRepo]: https://quay.io/repository/toolbx/arch-toolbox
+[UbuntuRepo]: https://quay.io/repository/toolbx/ubuntu-toolbox
+[RHEL 8]: https://catalog.redhat.com/software/containers/ubi8/toolbox/611bd665bd674341b5c5ed46
+[RHEL 9]: https://catalog.redhat.com/software/containers/ubi9/toolbox/61532d7dd2c7f84a4d2ed86b
 [toolbox#1389]: https://github.com/containers/toolbox/issues/1389
 [AlmaLinux]: https://hub.docker.com/_/almalinux
 [Alpine Linux]: https://hub.docker.com/_/alpine
