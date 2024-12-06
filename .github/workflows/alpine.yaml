@@ -21,7 +21,7 @@ on:
 env:
   distro: 'alpine'
   distro_pretty: 'Alpine Linux'
-  latest_release: '3.20'
+  latest_release: '3.21'
   platforms: 'linux/amd64, linux/arm64'
   registry: 'quay.io/toolbx-images'
 
@@ -36,7 +36,7 @@ jobs:
   build-push-images:
     strategy:
       matrix:
-        release: ['3.18', '3.19', '3.20', 'edge']
+        release: ['3.18', '3.19', '3.20', '3.21', 'edge']
 
     runs-on: ubuntu-24.04
     steps:
