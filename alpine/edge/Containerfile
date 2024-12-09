@@ -17,8 +17,5 @@ RUN rm /extra-packages
 # Enable password less sudo
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/toolbox
 
-# Copy the os-release file
-RUN cp -p /etc/os-release /usr/lib/os-release
-
 # Clear out /media
 RUN rm -rf /media
