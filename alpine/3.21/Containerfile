@@ -1,8 +1,8 @@
-FROM docker.io/library/alpine:edge
+FROM docker.io/library/alpine:3.21
 
 LABEL com.github.containers.toolbox="true" \
       name="alpine-toolbox" \
-      version="edge" \
+      version="3.21" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Alpine Linux toolbox containers" \
       maintainer="Jorge O. Castro <jorge.castro@gmail.com>"
