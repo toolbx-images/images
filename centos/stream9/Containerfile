@@ -19,7 +19,7 @@ RUN dnf -y upgrade && \
     dnf -y reinstall $(<missing-docs) && \
     dnf -y install 'dnf-command(config-manager)' && \
     dnf config-manager --set-enabled crb && \
-    dnf -y install epel-release epel-next-release && \
+    dnf -y install https://dl.fedoraproject.org/pub/epel/epel{,-next}-release-latest-9.noarch.rpm && \
     dnf -y install $(<extra-packages) && \
     dnf clean all
 
