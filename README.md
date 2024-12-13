@@ -51,11 +51,11 @@ directly use the commands below:
 
 - [CentOS (Stream)] with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream10
+  $ toolbox enter centos-toolbox-stream10
+
   $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
   $ toolbox enter centos-toolbox-stream9
-
-  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream8
-  $ toolbox enter centos-toolbox-stream8
   ```
 
 - [Debian]:
