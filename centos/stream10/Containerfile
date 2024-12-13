@@ -1,9 +1,9 @@
-FROM quay.io/centos/centos:stream10-development
+FROM quay.io/centos/centos:stream10
 
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="centos-toolbox" \
       name="centos-toolbox" \
-      version="stream10-development" \
+      version="stream10" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating CentOS toolbox containers" \
       maintainer="Timothée Ravier <tim@siosm.fr>"

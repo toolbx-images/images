@@ -24,23 +24,20 @@ directly use the commands below:
 
 - [Alpine Linux]:
   ```
+  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
+  $ toolbox enter alpine-toolbox-edge
+
+  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.21
+  $ toolbox enter alpine-toolbox-3.21
+
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.20
   $ toolbox enter alpine-toolbox-3.20
-  
+
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.19
   $ toolbox enter alpine-toolbox-3.19
 
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.18
   $ toolbox enter alpine-toolbox-3.18
-
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.17
-  $ toolbox enter alpine-toolbox-3.17
-
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.16
-  $ toolbox enter alpine-toolbox-3.16
-
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
-  $ toolbox enter alpine-toolbox-edge
   ```
 
 - [Amazon Linux] Note: Only Amazon Linux 2 comes with [EPEL] enabled by default:
@@ -54,11 +51,11 @@ directly use the commands below:
 
 - [CentOS (Stream)] with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream10
+  $ toolbox enter centos-toolbox-stream10
+
   $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
   $ toolbox enter centos-toolbox-stream9
-
-  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream8
-  $ toolbox enter centos-toolbox-stream8
   ```
 
 - [Debian]:
