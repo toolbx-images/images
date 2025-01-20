@@ -1,0 +1,33 @@
+name: Request an additional architecture for an existing image
+description: Ask for an image to be built for an additional architecture
+title: "Add architecture: <architecture> <distribution name>"
+labels: ["new-architecture-request", "maintainers-wanted"]
+assignees: []
+body:
+  - type: textarea
+    id: newarch-distribution
+    attributes:
+      label: Distribution name
+    validations:
+      required: true
+
+  - type: textarea
+    id: newarch-arch
+    attributes:
+      label: Architecture requested
+    validations:
+      required: true
+
+  - type: textarea
+    id: newarch-images
+    attributes:
+      label: Where are the official container images from the distribution published?
+    validations:
+      required: true
+
+  - type: textarea
+    id: newarch-maintainer
+    attributes:
+      label: Will you be interested in maintaining this image?
+    validations:
+      required: true
