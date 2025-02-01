@@ -35,6 +35,7 @@ concurrency:
 jobs:
   build-push-images:
     strategy:
+      fail-fast: false
       matrix:
         release: ['10', '11', '12', 'testing', 'unstable']
 
