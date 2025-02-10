@@ -22,7 +22,7 @@ env:
   distro: 'alpine'
   distro_pretty: 'Alpine Linux'
   latest_release: '3.21'
-  platforms: 'linux/amd64, linux/arm64'
+  platforms: 'linux/amd64, linux/arm64, linux/riscv64'
   registry: 'quay.io/toolbx-images'
 
 # Prevent multiple workflow runs from racing to ensure that pushes are made
