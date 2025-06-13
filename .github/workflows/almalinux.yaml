@@ -21,7 +21,7 @@ on:
 env:
   distro: 'almalinux'
   distro_pretty: 'AlmaLinux'
-  latest_release: '9'
+  latest_release: '10'
   platforms: 'linux/amd64, linux/arm64'
   registry: 'quay.io/toolbx-images'
 
