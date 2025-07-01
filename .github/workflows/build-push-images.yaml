@@ -1,0 +1,117 @@
+name: Build and push toolbx images
+
+on:
+  workflow_call:
+    inputs:
+      distro:
+        description: Distribution to build for
+        required: true
+        type: string
+
+      releases:
+        description: Distribution releases to build, separated by space
+        required: true
+        type: string
+
+      latest-release:
+        description: Distribution release to be tagged 'latest'
+        required: true
+        type: string
+
+      registry:
+        description: Registry to push to
+        required: true
+        type: string
+
+      platforms:
+        description: Build images for the given platforms, separated by comma
+        required: false
+        type: string
+
+    secrets:
+      registry-user:
+        description: Username used to log into registry
+        required: true
+
+      registry-password:
+        description: Password used to log into registry
+        required: true
+
+      cosign-private-key:
+        description: Private key to sign containers with
+        required: true
+
+jobs:
+  context:
+    runs-on: ubuntu-24.04
+    outputs:
+      releases: ${{ steps.context.outputs.releases }}
+    steps:
+      - uses: actions/github-script@v7
+        id: context
+        env:
+          RELEASES: ${{ inputs.releases }}
+        with:
+          script: |
+            const releases = process.env.RELEASES.split(/\s+/);
+            core.setOutput('releases', JSON.stringify(releases));
+
+  build-and-push:
+    needs: [context]
+    strategy:
+      fail-fast: false
+      matrix:
+        release: ${{ fromJSON(needs.context.outputs.releases) }}
+        include:
+          - release: ${{ inputs.latest-release }}
+            extra-tag: latest
+
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU for multi-arch builds
+        shell: bash
+        run: |
+          sudo apt update
+          sudo apt install qemu-user-static
+
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          platforms: ${{ inputs.platforms }}
+          context: ${{ inputs.distro }}/${{ matrix.release }}
+          image: ${{ inputs.distro }}-toolbox
+          tags: ${{ matrix.release }} ${{ matrix.extra-tag }}
+          containerfiles: ${{ inputs.distro }}/${{ matrix.release }}/Containerfile
+          layers: false
+          oci: true
+
+      - name: Login to Container Registry
+        uses: redhat-actions/podman-login@v1
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+        with:
+          registry: ${{ inputs.registry }}
+          username: ${{ secrets.registry-user }}
+          password: ${{ secrets.registry-password }}
+
+      - name: Push to Container Registry
+        uses: redhat-actions/push-to-registry@v2
+        id: push
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+        with:
+          image: ${{ inputs.distro }}-toolbox
+          registry: ${{ inputs.registry }}
+          tags: ${{ matrix.release }} ${{ matrix.extra-tag }}
+
+      - uses: sigstore/cosign-installer@v3.3.0
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+
+      - name: Sign container image
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+        run: |
+          cosign sign -y --recursive --key env://COSIGN_PRIVATE_KEY ${{ inputs.registry }}/${{ inputs.distro }}-toolbox@${{ steps.push.outputs.digest }}
+        env:
+          COSIGN_EXPERIMENTAL: false
+          COSIGN_PRIVATE_KEY: ${{ secrets.cosign-private-key }}
