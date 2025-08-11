@@ -9,6 +9,7 @@ gnupg
 gpgsm
 hostname
 iproute2
+iputils-ping
 iputils-tracepath
 keyutils
 less

@@ -20,9 +20,6 @@ RUN sed -Ei 's/^(hosts:.*)(\<files\>)\s*(.*)/\1\2 myhostname \3/' /etc/nsswitch.
 # Prevent questions when installing packages
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Make flatpak-xdg-utils usable inside the toolbox
-COPY toolbox-flatpak-xdg-utils.sh /etc/profile.d
-
 # Install extra packages as well as libnss-myhostname
 COPY extra-packages /
 RUN apt-get update && \
@@ -32,9 +29,10 @@ RUN apt-get update && \
     rm -rd /var/lib/apt/lists/*
 RUN rm /extra-packages
 
+# Add flatpak-spawn to /usr/bin
+RUN ln -s /usr/libexec/flatpak-xdg-utils/flatpak-spawn /usr/bin/
+
 # Enable password less sudo
 RUN sed -i -e 's/ ALL$/ NOPASSWD:ALL/' /etc/sudoers
 
 RUN echo VARIANT_ID=container >> /etc/os-release
-# ?
-RUN touch /etc/localtime
