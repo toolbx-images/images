@@ -66,6 +66,9 @@ directly use the commands below:
   $ toolbox create --image quay.io/toolbx-images/debian-toolbox:testing
   $ toolbox enter debian-toolbox-testing
 
+  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:13
+  $ toolbox enter debian-toolbox-13
+
   $ toolbox create --image quay.io/toolbx-images/debian-toolbox:12
   $ toolbox enter debian-toolbox-12
 

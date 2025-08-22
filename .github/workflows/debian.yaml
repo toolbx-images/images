@@ -32,7 +32,7 @@ jobs:
     uses: ./.github/workflows/build-push-images.yaml
     with:
       distro: debian
-      releases: 11 12 testing unstable
+      releases: 11 12 13 testing unstable
       latest-release: unstable
       registry: quay.io/toolbx-images
       platforms: linux/amd64, linux/arm64
