@@ -27,6 +27,9 @@ directly use the commands below:
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
   $ toolbox enter alpine-toolbox-edge
 
+  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.22
+  $ toolbox enter alpine-toolbox-3.22
+
   $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.21
   $ toolbox enter alpine-toolbox-3.21
 
