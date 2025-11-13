@@ -35,7 +35,7 @@ jobs:
       releases: 3.20 3.21 3.22 edge
       latest-release: 3.22
       registry: quay.io/toolbx-images
-      platforms: linux/amd64, linux/arm64
+      platforms: linux/amd64, linux/arm64, linux/riscv64
     secrets:
       registry-user: ${{ secrets.BOT_USERNAME }}
       registry-password: ${{ secrets.BOT_PASSWORD }}
