@@ -74,9 +74,6 @@ directly use the commands below:
 
   $ toolbox create --image quay.io/toolbx-images/debian-toolbox:11
   $ toolbox enter debian-toolbox-11
-
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:10
-  $ toolbox enter debian-toolbox-10
   ```
 
 - [openSUSE]:
