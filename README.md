@@ -15,6 +15,9 @@ directly use the commands below:
 
 - [AlmaLinux] with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:10
+  $ toolbox enter almalinux-toolbox-10
+
   $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:9
   $ toolbox enter almalinux-toolbox-9
 
