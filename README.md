@@ -15,6 +15,9 @@ directly use the commands below:
 
 - [AlmaLinux] with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:10
+  $ toolbox enter almalinux-toolbox-10
+
   $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:9
   $ toolbox enter almalinux-toolbox-9
 
@@ -71,9 +74,6 @@ directly use the commands below:
 
   $ toolbox create --image quay.io/toolbx-images/debian-toolbox:11
   $ toolbox enter debian-toolbox-11
-
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:10
-  $ toolbox enter debian-toolbox-10
   ```
 
 - [openSUSE]:
