@@ -7,6 +7,9 @@ LABEL com.github.containers.toolbox="true" \
       summary="Base image for creating openSUSE toolbox containers" \
       maintainer="Hari Rana <theevilskeleton@fedoraproject.org>"
 
+# Enable manpages
+RUN zypper --non-interactive rm zypp-excludedocs
+
 # Update packages, install extra packages and clean up cache 
 COPY extra-packages /
 RUN zypper update -y && \
