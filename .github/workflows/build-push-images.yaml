@@ -115,6 +115,7 @@ jobs:
         with:
           image: ${{ inputs.distro }}-toolbox
           registry: ${{ inputs.registry }}
+          extra-args: --add-compression zstd:chunked
           tags: |
             ${{ matrix.release }}
             ${{ matrix.release }}-${{ needs.context.outputs.timestamp }}
