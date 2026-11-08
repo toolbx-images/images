@@ -16,6 +16,7 @@ less
 libcap2-bin
 libkrb5-3
 libnss-mdns
+locales-all
 lsof
 man-db
 manpages
