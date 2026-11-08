@@ -1,6 +1,4 @@
-acl
 bash
-curl
 gawk
 grep
 gzip
@@ -11,5 +9,4 @@ pam
 python3
 rpm
 sed
-systemd
 tar

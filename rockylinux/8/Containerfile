@@ -1,4 +1,4 @@
-FROM docker.io/library/rockylinux:8
+FROM docker.io/rockylinux/rockylinux:8
 
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="rockylinux-toolbox" \
