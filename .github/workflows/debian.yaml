@@ -33,7 +33,7 @@ jobs:
     with:
       distro: debian
       releases: 12 13 testing unstable
-      latest-release: unstable
+      latest-release: 13
       registry: quay.io/toolbx-images
       platforms: linux/amd64, linux/arm64
     secrets:
