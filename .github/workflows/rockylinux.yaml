@@ -32,8 +32,8 @@ jobs:
     uses: ./.github/workflows/build-push-images.yaml
     with:
       distro: rockylinux
-      releases: 8 9
-      latest-release: 9
+      releases: 8 9 10
+      latest-release: 10
       registry: quay.io/toolbx-images
       platforms: linux/amd64, linux/arm64
     secrets:

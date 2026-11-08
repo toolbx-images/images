@@ -81,6 +81,9 @@ directly use the commands below:
 
 - [Rocky Linux] with [EPEL] enabled by default:
   ```
+  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:10
+  $ toolbox enter rockylinux-toolbox-10
+
   $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
   $ toolbox enter rockylinux-toolbox-9
 
