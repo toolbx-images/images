@@ -1,0 +1,12 @@
+bash
+curl
+gawk
+grep
+gzip
+libcap
+p11-kit
+pam
+python3
+rpm
+sed
+tar
