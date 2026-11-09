@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: toolbox-images contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
 name: Request a package
 description: Ask for a new package to be added to an existing distribution image
 title: "New Package: <package name> - <distribution image and version>"

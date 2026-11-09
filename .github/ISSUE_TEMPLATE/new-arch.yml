@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: toolbox-images contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
 name: Request an additional architecture for an existing image
 description: Ask for an image to be built for an additional architecture
 title: "Add architecture: <architecture> <distribution name>"

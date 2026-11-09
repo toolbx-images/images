@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: toolbox-images contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
 name: "Rocky Linux: Build and push toolbx images"
 
 permissions: read-all
