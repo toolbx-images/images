@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: toolbox-images contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
 FROM public.ecr.aws/amazonlinux/amazonlinux:2023
 
 LABEL com.github.containers.toolbox="true" \

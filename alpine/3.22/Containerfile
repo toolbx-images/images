@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: toolbox-images contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
 FROM docker.io/library/alpine:3.22
 
 LABEL com.github.containers.toolbox="true" \
