@@ -33,7 +33,7 @@ concurrency:
 
 jobs:
   build-push-images:
-    uses: ./.github/workflows/build-push-images.yaml
+    uses: $/.github/workflows/build-push-images.yaml
     with:
       distro: almalinux
       releases: 8 9 10
