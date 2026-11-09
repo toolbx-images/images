@@ -33,7 +33,7 @@ concurrency:
 
 jobs:
   build-push-images:
-    uses: ./.github/workflows/build-push-images.yaml
+    uses: $/.github/workflows/build-push-images.yaml
     with:
       distro: debian
       releases: 12 13 testing unstable

@@ -33,7 +33,7 @@ concurrency:
 
 jobs:
   build-push-images:
-    uses: ./.github/workflows/build-push-images.yaml
+    uses: $/.github/workflows/build-push-images.yaml
     with:
       distro: alpine
       releases: 3.20 3.21 3.22 edge
