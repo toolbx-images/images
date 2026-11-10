@@ -52,7 +52,7 @@ jobs:
       releases: ${{ steps.context.outputs.releases }}
       timestamp: ${{ steps.context.outputs.timestamp }}
     steps:
-      - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         id: context
         env:
           RELEASES: ${{ inputs.releases }}
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-26.04
     steps:
       - name: Checkout
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -87,7 +87,7 @@ jobs:
           sudo apt install qemu-user-binfmt
 
       - name: Build container image
-        uses: redhat-actions/buildah-build@9dc2ade9b5db229966b5025ae266311e12f349c4 # v2
+        uses: redhat-actions/buildah-build@719e3c40d8af9790c23eca13f7daa339f2867034 # v3.1.0
         with:
           platforms: ${{ inputs.platforms }}
           context: ${{ inputs.distro }}/${{ matrix.release }}
@@ -101,7 +101,7 @@ jobs:
           oci: true
 
       - name: Login to Container Registry
-        uses: redhat-actions/podman-login@4934294ad0449894bcd1e9f191899d7292469603 # v1
+        uses: redhat-actions/podman-login@50c2d9a331bb67c8fdab99b86455fad05e2e3252 # v2.0
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         with:
           registry: ${{ inputs.registry }}
@@ -109,7 +109,7 @@ jobs:
           password: ${{ secrets.registry-password }}
 
       - name: Push to Container Registry
-        uses: redhat-actions/push-to-registry@5860fc963bf8f2b3221773a023141612f010c469 # v2
+        uses: redhat-actions/push-to-registry@94ade333c38ecc0e60e94785125d9a52ca423b37 # v3.0.0
         id: push
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         with:
@@ -120,7 +120,7 @@ jobs:
             ${{ matrix.release }}-${{ needs.context.outputs.timestamp }}
             ${{ matrix.extra-tag }}
 
-      - uses: sigstore/cosign-installer@9614fae9e5c5eddabb09f90a270fcb487c9f7149 # v3.3.0
+      - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
 
       - name: Sign container image
