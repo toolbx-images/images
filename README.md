@@ -14,87 +14,119 @@ You can find all images in the [toolbx-images organization] on [Quay.io], or
 directly use the commands below:
 
 - [AlmaLinux] with [EPEL] enabled by default:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:10
-  $ toolbox enter almalinux-toolbox-10
+  toolbox create --image quay.io/toolbx-images/almalinux-toolbox:10
+  toolbox enter almalinux-toolbox-10
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:9
-  $ toolbox enter almalinux-toolbox-9
+  ```
+  toolbox create --image quay.io/toolbx-images/almalinux-toolbox:9
+  toolbox enter almalinux-toolbox-9
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/almalinux-toolbox:8
-  $ toolbox enter almalinux-toolbox-8
+  ```
+  toolbox create --image quay.io/toolbx-images/almalinux-toolbox:8
+  toolbox enter almalinux-toolbox-8
   ```
 
 - [Alpine Linux]:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
-  $ toolbox enter alpine-toolbox-edge
+  toolbox create --image quay.io/toolbx-images/alpine-toolbox:edge
+  toolbox enter alpine-toolbox-edge
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.24
-  $ toolbox enter alpine-toolbox-3.24
+  ```
+  toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.24
+  toolbox enter alpine-toolbox-3.24
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.23
-  $ toolbox enter alpine-toolbox-3.23
+  ```
+  toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.23
+  toolbox enter alpine-toolbox-3.23
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.22
-  $ toolbox enter alpine-toolbox-3.22
+  ```
+  toolbox create --image quay.io/toolbx-images/alpine-toolbox:3.22
+  toolbox enter alpine-toolbox-3.22
   ```
 
 - [Amazon Linux] Note: Only Amazon Linux 2 comes with [EPEL] enabled by default:
-  ```
-  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2023
-  $ toolbox enter amazonlinux-toolbox-2023
 
-  $ toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2
-  $ toolbox enter amazonlinux-toolbox-2
+  ```
+  toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2023
+  toolbox enter amazonlinux-toolbox-2023
+  ```
+
+  ```
+  toolbox create --image quay.io/toolbx-images/amazonlinux-toolbox:2
+  toolbox enter amazonlinux-toolbox-2
   ```
 
 - [CentOS (Stream)] with [EPEL] enabled by default:
-  ```
-  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream10
-  $ toolbox enter centos-toolbox-stream10
 
-  $ toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
-  $ toolbox enter centos-toolbox-stream9
+  ```
+  toolbox create --image quay.io/toolbx-images/centos-toolbox:stream10
+  toolbox enter centos-toolbox-stream10
+  ```
+
+  ```
+  toolbox create --image quay.io/toolbx-images/centos-toolbox:stream9
+  toolbox enter centos-toolbox-stream9
   ```
 
 - [Debian]:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:unstable
-  $ toolbox enter debian-toolbox-unstable
+  toolbox create --image quay.io/toolbx-images/debian-toolbox:unstable
+  toolbox enter debian-toolbox-unstable
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:testing
-  $ toolbox enter debian-toolbox-testing
+  ```
+  toolbox create --image quay.io/toolbx-images/debian-toolbox:testing
+  toolbox enter debian-toolbox-testing
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:13
-  $ toolbox enter debian-toolbox-13
+  ```
+  toolbox create --image quay.io/toolbx-images/debian-toolbox:13
+  toolbox enter debian-toolbox-13
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/debian-toolbox:12
-  $ toolbox enter debian-toolbox-12
+  ```
+  toolbox create --image quay.io/toolbx-images/debian-toolbox:12
+  toolbox enter debian-toolbox-12
   ```
 
 - [openSUSE]:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed
-  $ toolbox enter opensuse-toolbox-tumbleweed
+  toolbox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed
+  toolbox enter opensuse-toolbox-tumbleweed
   ```
 
 - [Rocky Linux] with [EPEL] enabled by default:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:10
-  $ toolbox enter rockylinux-toolbox-10
+  toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:10
+  toolbox enter rockylinux-toolbox-10
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
-  $ toolbox enter rockylinux-toolbox-9
+  ```
+  toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:9
+  toolbox enter rockylinux-toolbox-9
+  ```
 
-  $ toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:8
-  $ toolbox enter rockylinux-toolbox-8
+  ```
+  toolbox create --image quay.io/toolbx-images/rockylinux-toolbox:8
+  toolbox enter rockylinux-toolbox-8
   ```
 
 - [Wolfi]:
+
   ```
-  $ toolbox create --image quay.io/toolbx-images/wolfi-toolbox:latest
-  $ toolbox enter wolfi-toolbox-latest
+  toolbox create --image quay.io/toolbx-images/wolfi-toolbox:latest
+  toolbox enter wolfi-toolbox-latest
   ```
 
 ## Verifying sigstore container signatures with podman
@@ -102,18 +134,25 @@ directly use the commands below:
 How to configure sigstore signature verification in podman:
 
 ```
-$ sudo mkdir /etc/pki/containers
-$ curl -O "https://raw.githubusercontent.com/toolbx-images/images/main/quay.io-toolbx-images.pub"
-$ sudo cp quay.io-toolbx-images.pub /etc/pki/containers/
-$ sudo restorecon -RFv /etc/pki/containers
+sudo mkdir /etc/pki/containers
+curl -O "https://raw.githubusercontent.com/toolbx-images/images/main/quay.io-toolbx-images.pub"
+sudo cp quay.io-toolbx-images.pub /etc/pki/containers/
+sudo restorecon -RFv /etc/pki/containers
+```
 
-$ cat /etc/containers/registries.d/quay.io-toolbx-images.yaml
+`cat /etc/containers/registries.d/quay.io-toolbx-images.yaml`:
+```
 docker:
   quay.io/toolbx-images:
     use-sigstore-attachments: true
-$ sudo restorecon -RFv /etc/containers/registries.d/quay.io-toolbx-images.yaml
+```
 
-$ cat /etc/containers/policy.json
+```
+sudo restorecon -RFv /etc/containers/registries.d/quay.io-toolbx-images.yaml
+```
+
+`cat /etc/containers/policy.json`:
+```
 {
     "default": [
         {
@@ -141,8 +180,8 @@ $ cat /etc/containers/policy.json
         },
         ...
     }
+    ...
 }
-...
 ```
 
 ## What about Arch Linux, Fedora, RHEL and Ubuntu images?
@@ -150,34 +189,40 @@ $ cat /etc/containers/policy.json
 The Arch Linux, Fedora and Ubuntu images are now maintained as part of [Toolbx]
 ([GitHub]):
 
-- [Arch Linux] ([repo on Quay.io][ArchLinuxRepo]). Usage:
+- [Arch Linux] ([repo on Quay.io][ArchLinuxRepo]):
+
   ```
-  $ toolbox create --distro arch
-  $ toolbox enter arch-toolbox-latest
+  toolbox create --distro arch
+  toolbox enter arch-toolbox-latest
   ```
 
-- [Fedora] (repo on `registry.fedoraproject.org`). Usage:
+- [Fedora] (repo on `registry.fedoraproject.org`):
+
+  Example for Fedora 40:
+
   ```
-  # Example for Fedora 40
-  $ toolbox create --distro fedora --release 40
-  $ toolbox enter fedora-toolbox-40
+  toolbox create --distro fedora --release 40
+  toolbox enter fedora-toolbox-40
   ```
 
-- [Ubuntu] ([repo on Quay.io][UbuntuRepo]). Usage:
+- [Ubuntu] ([repo on Quay.io][UbuntuRepo]):
+
+  Example for Ubuntu 24.04:
+
   ```
-  # Example for Ubuntu 24.04
-  $ toolbox create --distro ubuntu --release 24.04
-  $ toolbox enter ubuntu-toolbox-24.04
+  toolbox create --distro ubuntu --release 24.04
+  toolbox enter ubuntu-toolbox-24.04
   ```
 
 The [Red Hat Enterprise Linux (Universal Base Image)] images are now maintained
 by Red Hat and their sources are part of [Toolbx] ([GitHub]) (repo on
-`registry.access.redhat.com` for [RHEL 8] and [RHEL 9]. Usage:
+`registry.access.redhat.com` for [RHEL 8] and [RHEL 9]).
+
+Example for RHEL 9.4:
 
 ```
-# Example for RHEL 9.4
-$ toolbox create --distro rhel --release 9.4
-$ toolbox enter rhel-toolbox-9.4
+toolbox create --distro rhel --release 9.4
+toolbox enter rhel-toolbox-9.4
 ```
 
 ## License
