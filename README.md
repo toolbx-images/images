@@ -198,31 +198,31 @@ The Arch Linux, Fedora and Ubuntu images are now maintained as part of [Toolbx]
 
 - [Fedora] (repo on `registry.fedoraproject.org`):
 
-  Example for Fedora 40:
+  Example for Fedora 45:
 
   ```
-  toolbox create --distro fedora --release 40
-  toolbox enter fedora-toolbox-40
+  toolbox create --distro fedora --release 45
+  toolbox enter fedora-toolbox-45
   ```
 
 - [Ubuntu] ([repo on Quay.io][UbuntuRepo]):
 
-  Example for Ubuntu 24.04:
+  Example for Ubuntu 26.04:
 
   ```
-  toolbox create --distro ubuntu --release 24.04
-  toolbox enter ubuntu-toolbox-24.04
+  toolbox create --distro ubuntu --release 26.04
+  toolbox enter ubuntu-toolbox-26.04
   ```
 
 The [Red Hat Enterprise Linux (Universal Base Image)] images are now maintained
 by Red Hat and their sources are part of [Toolbx] ([GitHub]) (repo on
-`registry.access.redhat.com` for [RHEL 8] and [RHEL 9]).
+`registry.access.redhat.com` for [RHEL 8], [RHEL 9] and [RHEL 10]).
 
-Example for RHEL 9.4:
+Example for RHEL 10.2:
 
 ```
-toolbox create --distro rhel --release 9.4
-toolbox enter rhel-toolbox-9.4
+toolbox create --distro rhel --release 10.2
+toolbox enter rhel-toolbox-10.2
 ```
 
 ## License
@@ -241,6 +241,7 @@ See [COPYING](COPYING).
 [UbuntuRepo]: https://quay.io/repository/toolbx/ubuntu-toolbox
 [RHEL 8]: https://catalog.redhat.com/software/containers/ubi8/toolbox/611bd665bd674341b5c5ed46
 [RHEL 9]: https://catalog.redhat.com/software/containers/ubi9/toolbox/61532d7dd2c7f84a4d2ed86b
+[RHEL 10]: https://catalog.redhat.com/en/software/containers/ubi10/toolbox/673c71177d6a963b3b8c6e13
 [toolbox#1389]: https://github.com/containers/toolbox/issues/1389
 [AlmaLinux]: https://hub.docker.com/_/almalinux
 [Alpine Linux]: https://hub.docker.com/_/alpine
