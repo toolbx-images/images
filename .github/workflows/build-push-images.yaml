@@ -122,11 +122,13 @@ jobs:
 
       - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+        with:
+          cosign-release: v2.6.5
 
       - name: Sign container image
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         run: |
-          cosign sign -y --recursive --registry-referrers-mode=legacy --key env://COSIGN_PRIVATE_KEY ${INPUTS_REGISTRY}/${INPUTS_DISTRO}-toolbox@${STEPS_PUSH_OUTPUTS_DIGEST}
+          cosign sign -y --recursive --key env://COSIGN_PRIVATE_KEY ${INPUTS_REGISTRY}/${INPUTS_DISTRO}-toolbox@${STEPS_PUSH_OUTPUTS_DIGEST}
         env:
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.cosign-private-key }}
