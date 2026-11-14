@@ -100,6 +100,12 @@ jobs:
           layers: false
           oci: true
 
+      - name: Smoke test
+        env:
+          DISTRO: ${{ inputs.distro }}
+          RELEASE: ${{ matrix.release }}
+        run: ./tests/smoke-test.sh "${DISTRO}" "${RELEASE}"
+
       - name: Login to Container Registry
         uses: redhat-actions/podman-login@50c2d9a331bb67c8fdab99b86455fad05e2e3252 # v2.0
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
