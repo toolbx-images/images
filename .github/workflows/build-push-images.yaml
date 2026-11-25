@@ -121,9 +121,6 @@ jobs:
         with:
           image: ${{ inputs.distro }}-toolbox
           registry: ${{ inputs.registry }}
-          extra-args: |
-            --add-compression=zstd
-            --add-compression=zstd:chunked
           tags: |
             ${{ matrix.release }}
             ${{ matrix.release }}-${{ needs.context.outputs.timestamp }}
@@ -137,20 +134,7 @@ jobs:
       - name: Sign container image
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         run: |
-          set -euo pipefail
-
-          ref="${INPUTS_REGISTRY}/${INPUTS_DISTRO}-toolbox"
-
-          echo "Signing ${ref}@${STEPS_PUSH_OUTPUTS_DIGEST}"
-          cosign sign -y --key env://COSIGN_PRIVATE_KEY "${ref}@${STEPS_PUSH_OUTPUTS_DIGEST}"
-
-          # --recursive only signs one manifest per platform when the list has
-          # multiple compression variants, so sign every child explicitly.
-          children="$(skopeo inspect --raw "docker://${ref}@${STEPS_PUSH_OUTPUTS_DIGEST}" | jq -r '.manifests[].digest')"
-          for child in ${children}; do
-            echo "Signing ${ref}@${child}"
-            cosign sign -y --key env://COSIGN_PRIVATE_KEY "${ref}@${child}"
-          done
+          cosign sign -y --recursive --key env://COSIGN_PRIVATE_KEY ${INPUTS_REGISTRY}/${INPUTS_DISTRO}-toolbox@${STEPS_PUSH_OUTPUTS_DIGEST}
         env:
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.cosign-private-key }}
